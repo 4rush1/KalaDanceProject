@@ -1,4 +1,4 @@
-# KalaDanceProject-
+# KalaDanceProject
 Investigation into:
 - HTML
 - CSS
