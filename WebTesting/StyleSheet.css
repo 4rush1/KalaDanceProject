@@ -1,0 +1,38 @@
+/* Root section to add background colour etc. */
+:root{
+    --text: rgb(0,0,0); 
+}
+
+/* IMPORTING FONT */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;900&display=swap');
+
+/* BODY */
+body{
+    /* font size must be 100% */
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 100%;
+    /* background-color: ; */
+}
+
+/* TEXT */
+.body-text{
+    font-size: 1em;
+    text-align: center;
+    color: var(--text);
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+}
+
+h3{
+    font-size: 2em;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* NAVIGATION */
