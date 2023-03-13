@@ -50,3 +50,20 @@ padding:0;
 }
 
 /* NAVIGATION */
+.navbar{
+    background-color: white;
+    border-bottom: 1px solid black;
+    }
+
+.nav-item:hover{
+    background-color: gray;
+    }
+
+.nav-link{
+    font-size: 1.5em;
+    color: black;
+    }
+
+.nav-link:hover{
+    color: rgb(65, 65, 65);
+    }
