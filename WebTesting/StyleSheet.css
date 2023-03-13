@@ -46,7 +46,6 @@ h3{
 .container-fluid{
 border: 0px solid black;
 padding:0;
-
 }
 
 /* NAVIGATION */
@@ -67,3 +66,12 @@ padding:0;
 .nav-link:hover{
     color: rgb(65, 65, 65);
     }
+
+.btn-outline{
+    border: 1px solid black;
+    padding: 0 1em;
+}
+
+.btn-outline:hover{
+    background-color: gray;
+}
