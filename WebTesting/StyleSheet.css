@@ -1,6 +1,9 @@
 /* Root section to add background colour etc. */
 :root{
-    --text: rgb(0,0,0); 
+    --text: rgb(72, 35, 112); 
+    --light-purple: rgb(196, 173, 222);
+    --highlight: rgb(255,255,255);
+    --lighter-purple: rgb(217, 201, 235);
 }
 
 /* IMPORTING FONT */
@@ -11,13 +14,14 @@ body{
     /* font size must be 100% */
     font-family: 'Noto Sans', sans-serif;
     font-size: 100%;
-    /* background-color: ; */
+    background-color: var(--light-purple);
 }
 
 /* TEXT */
 .body-text{
     font-size: 1em;
     text-align: center;
+    background-color: var(--highlight);
     color: var(--text);
 }
 
@@ -26,6 +30,9 @@ h1{
     text-align: center;
     font-weight: 600;
     margin: 0;
+    padding: 2em 2em;
+    color: var(--text);
+    background-color: var(--highlight);
 }
 
 h3{
@@ -33,6 +40,7 @@ h3{
     text-align: center;
     font-weight: 600;
     margin: 0;
+    color: var(--text);
 }
 
 /* CONTAINERS */
@@ -53,34 +61,36 @@ h3{
 }
 
 .container-lg{
-    border: 5px solid blue;
-    background-color: white;
+    border: 5px;
+    background-color: var(--highlight);
     margin-bottom: 2.5em;
  }
  
 .container-fluid{
-border: 0px solid black;
+border: 0px;
 padding:0;
 }
 
 /* NAVIGATION */
+
 .navbar{
-    background-color: white;
+    background-color: var(--light-purple);
     border-bottom: 1px solid black;
     }
 
 .nav-item:hover{
-    background-color: gray;
+    background-color: var(--lighter-purple);
     }
 
 .nav-link{
     text-align: center;
     font-size: 1.5em;
-    color: black;
+    color: var(--text);
+    padding: 1em 1em;
     }
 
 .nav-link:hover{
-    color: rgb(65, 65, 65);
+    color: var(--text);
     }
 
 .btn-outline{
@@ -89,5 +99,18 @@ padding:0;
 }
 
 .btn-outline:hover{
-    background-color: gray;
+    background-color: var(--lighter-purple);
+}
+
+/* FOOTER */
+.footer-content{
+    background-color: var(--highlight);
+    text-align: center;
+    padding: 0.5em 0 o.5em 0;
+    color: var(--text);
+}
+
+.footer-content p:first-child{
+    font-weight:600;
+    font-size: 1.5em;
 }
