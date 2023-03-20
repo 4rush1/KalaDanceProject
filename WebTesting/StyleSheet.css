@@ -1,8 +1,8 @@
 /* Root section to add background colour etc. */
 :root{
-    --text: rgb(72, 35, 112); 
+    --dark-violet: rgb(70, 34, 85); 
     --light-purple: rgb(196, 173, 222);
-    --highlight: rgb(255,255,255);
+    --magnolia: rgb(252, 247, 255);
     --lighter-purple: rgb(217, 201, 235);
 }
 
@@ -21,8 +21,8 @@ body{
 .body-text{
     font-size: 1em;
     text-align: center;
-    background-color: var(--highlight);
-    color: var(--text);
+    background-color: var(--magnolia);
+    color: var(--dark-violet);
 }
 
 h1{
@@ -31,8 +31,8 @@ h1{
     font-weight: 600;
     margin: 0;
     padding: 2em 2em;
-    color: var(--text);
-    background-color: var(--highlight);
+    color: var(--dark-violet);
+    background-color: var(--magnolia);
 }
 
 h3{
@@ -40,7 +40,7 @@ h3{
     text-align: center;
     font-weight: 600;
     margin: 0;
-    color: var(--text);
+    color: var(--dark-violet);
 }
 
 /* CONTAINERS */
@@ -60,15 +60,30 @@ h3{
     }
 }
 
+@media only screen and (max-width:576px){
+        
+        .part-image{
+            max-width: 100%;
+            
+        }
+    }
+
 .container-lg{
     border: 5px;
-    background-color: var(--highlight);
+    background-color: var(--magnolia);
     margin-bottom: 2.5em;
  }
  
 .container-fluid{
 border: 0px;
 padding:0;
+}
+
+/* IMAGES */
+.part-img{
+    max-width: 75%;
+    margin: auto;
+    display: block;
 }
 
 /* NAVIGATION */
@@ -85,13 +100,15 @@ padding:0;
 .nav-link{
     text-align: center;
     font-size: 1.5em;
-    color: var(--text);
+    color: var(--dark-violet);
     padding: 1em 1em;
     }
 
 .nav-link:hover{
-    color: var(--text);
+    color: var(--dark-violet);
     }
+
+/* BUTTONS */ 
 
 .btn-outline{
     border: 1px solid black;
@@ -102,12 +119,18 @@ padding:0;
     background-color: var(--lighter-purple);
 }
 
+/* CARDS */
+
+.card{
+    text-align: center;
+}
+
 /* FOOTER */
 .footer-content{
-    background-color: var(--highlight);
+    background-color: var(--magnolia);
     text-align: center;
     padding: 0.5em 0 o.5em 0;
-    color: var(--text);
+    color: var(--dark-violet);
 }
 
 .footer-content p:first-child{
