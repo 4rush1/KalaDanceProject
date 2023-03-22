@@ -79,11 +79,35 @@ border: 0px;
 padding:0;
 }
 
+.col-lg-7, .col-lg-5, .col-sm-4{
+    border: 2px solid blue;
+}
+
+.row{
+    border: 2px solid red;
+    padding: 1em 0 1em 0; 
+}
+
 /* IMAGES */
 .part-img{
     max-width: 75%;
     margin: auto;
     display: block;
+}
+
+.img-size{
+    width:100%;
+    max-width: 250px;
+    display: block;
+    margin: auto;
+}
+
+.card{
+    text-align: center;
+    width:100%;
+    max-width: 250px;
+    display: block;
+    margin: auto;   
 }
 
 /* NAVIGATION */
@@ -117,12 +141,6 @@ padding:0;
 
 .btn-outline:hover{
     background-color: var(--lighter-purple);
-}
-
-/* CARDS */
-
-.card{
-    text-align: center;
 }
 
 /* FOOTER */
