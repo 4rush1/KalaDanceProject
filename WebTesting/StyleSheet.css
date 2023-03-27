@@ -95,14 +95,14 @@ padding:0;
 }
 
 .part-img{
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
     display: block;
 }
 
 .img-size{
     width:100%;
-    max-width: 250px;
+    max-width: 500px;
     display: block;
     margin: auto;
 }
@@ -110,7 +110,7 @@ padding:0;
 .card{
     text-align: center;
     width:100%;
-    max-width: 250px;
+    max-width: 500px;
     display: block;
     margin: auto;   
 }
@@ -151,10 +151,6 @@ padding:0;
 /* CARD */
 .card-text{
     color: white;
-}
-
-.btn{
-    color: var(--dark-violet);
 }
 
 /* FOOTER */
