@@ -1,9 +1,9 @@
 /* Root section to add background colour etc. */
 :root{
-    --dark-violet: rgb(70, 34, 85); 
-    --light-purple: rgb(196, 173, 222);
-    --magnolia: rgb(252, 247, 255);
-    --lighter-purple: rgb(217, 201, 235);
+    --dark-brown: rgb(35, 9, 3); 
+    --beige: rgb(233, 198, 165);
+    --almond: rgb(255, 248, 240);
+    --light-beige: rgb(231, 216, 201);
 }
 
 /* IMPORTING FONT */
@@ -14,15 +14,14 @@ body{
     /* font size must be 100% */
     font-family: 'Noto Sans', sans-serif;
     font-size: 100%;
-    background-color: var(--light-purple);
+    background-color: var(--beige);
 }
 
 /* TEXT */
 .body-text{
     font-size: 1em;
     text-align: center;
-    background-color: var(--magnolia);
-    color: var(--dark-violet);
+    color: var(--dark-brown);
 }
 
 h1{
@@ -31,8 +30,8 @@ h1{
     font-weight: 600;
     margin: 0;
     padding: 2em 2em;
-    color: var(--dark-violet);
-    background-color: var(--magnolia);
+    color: var(--dark-brown);
+    background-color: var(--almond);
 }
 
 h3{
@@ -40,7 +39,7 @@ h3{
     text-align: center;
     font-weight: 600;
     margin: 0;
-    color: var(--dark-violet);
+    color: var(--dark-brown);
 }
 
 /* CONTAINERS */
@@ -58,11 +57,14 @@ h3{
     .h3{
         font-size:3em;
     }
+    .card-text{
+        font-size: 1em;
+    }
 }
 
 .container-lg{
     border: 5px;
-    background-color: var(--magnolia);
+    background-color: var(--almond);
     margin-bottom: 2.5em;
  }
  
@@ -71,7 +73,7 @@ border: 0px;
 padding:0;
 }
 
-.col-lg-7, .col-lg-5, .col-sm-4{
+.col-lg-7, .col-lg-5{
     border: 0px solid blue;
 }
 
@@ -88,15 +90,10 @@ padding:0;
         max-width: 100%;
         
     }
-
-    .card-text{
-        font-size: 1em;
-    }
 }
 
 .part-img{
     max-width: 100%;
-    margin: auto;
     display: block;
 }
 
@@ -107,37 +104,48 @@ padding:0;
     margin: auto;
 }
 
-.card{
+.banner{
+    margin-top: 5em;
+}
+
+/* CIRCULAR IMAGES */
+
+.image-text{
+    color: var(--dark-brown);
+}
+
+.col-md-4{
     text-align: center;
-    width:100%;
-    max-width: 500px;
-    display: block;
-    margin: auto;   
 }
 
 /* NAVIGATION */
 
 .navbar{
-    background-color: var(--light-purple);
+    background-color: var(--beige);
     border-bottom: 1px solid black;
     }
 
 .nav-item:hover{
-    background-color: var(--lighter-purple);
+    background-color: var(--light-beige);
     }
 
 .nav-link{
     text-align: center;
     font-size: 1.5em;
-    color: var(--dark-violet);
+    color: var(--dark-brown);
     padding: 1em 1em;
     }
 
 .nav-link:hover{
-    color: var(--dark-violet);
+    color: var(--dark-brown);
     }
 
 /* BUTTONS */ 
+
+.btn{
+    color: var(--dark-brown);
+
+}
 
 .btn-outline{
     border: 1px solid black;
@@ -145,20 +153,15 @@ padding:0;
 }
 
 .btn-outline:hover{
-    background-color: var(--lighter-purple);
-}
-
-/* CARD */
-.card-text{
-    color: white;
+    background-color: var(--light-beige);
 }
 
 /* FOOTER */
 .footer-content{
-    background-color: var(--magnolia);
+    background-color: var(--almond);
     text-align: center;
     padding: 0.5em 0 0.5em 0;
-    color: var(--dark-violet);
+    color: var(--dark-brown);
 }
 
 .footer-content p:first-child{
