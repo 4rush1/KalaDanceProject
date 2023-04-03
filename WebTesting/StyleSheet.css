@@ -3,7 +3,7 @@
     --beige: rgb(233, 198, 165);
     --almond: rgb(255, 241, 225);
     --light-beige: rgb(245, 220, 197);
-    --maroon: rgb(53, 17, 18);
+    --maroon: rgb(55, 17, 18);
     --light-maroon: rgb(88, 23, 24);
 }
 
@@ -32,7 +32,6 @@ h1{
     margin: 0;
     padding: 2em 2em;
     color: var(--maroon);
-    background-color: var(--almond);
 }
 
 h3{
