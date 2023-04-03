@@ -13,7 +13,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- linking in style sheet-->
-<link rel="stylesheet" href="StyleSheet.css">
+<link rel="stylesheet" href="static/StyleSheet.css">
 </head>
 <body>
 
@@ -30,52 +30,26 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Beginner Info</a>
+                <a class="nav-link" href="/beginnerinfo">Beginner Info</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">News/Events</a>
+                <a class="nav-link" href="/newsevents">News/Events</a>
             </li>
         </ul>
- <div class="ms-auto"><a class="nav-link btn btn-outline" href="">Enrol</a>
+ <div class="ms-auto"><a class="nav-link btn btn-outline" href="/enrol">Enrol</a>
  </div>
 </div>
 </nav>
 </div>
 
 <!-- BANNER -->
-<img class="img-fluid part-img banner" src="{% block banner}{% endblock %}" alt="">
-
- <!-- BUTTONS -->
-<div class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="#" class="btn btn-outline btn-lg"> Beginner Info </a>
-                <p class="image-text"> Find classes, equiptment and videos here</p>
-                <img class="img-size rounded-circle" src="WebpageMaterial/Dance3.jpg" alt="">
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="btn btn-outline btn-lg"> New/Events </a>
-                <p class="image-text"> Updates about performances and classes</p>
-                <img class="img-size rounded-circle" src="WebpageMaterial/Dance1.jpg" alt="">
-            </div>
-            <div class="col-md-4">
-            <a href="#" class="btn btn-outline btn-lg"> Enrol </a>
-            <p class="image-text"> Enrol with us now</p>
-                <img class="img-size rounded-circle" src="WebpageMaterial/Dance2.jpg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-
+<img class="img-fluid part-img banner" src="{% block banner %}{% endblock %}" alt="">
 
 {% block content %}
 {% endblock %}
-
-
 
 <!-- FOOTER -->
 <footer class="container-fluid footer-content">
