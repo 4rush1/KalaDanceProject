@@ -144,8 +144,7 @@ padding:0;
 
 .btn{
     background-color: var(--maroon);
-    color: var(--light-beige);
-
+    color: var(--beige);
 }
 
 .btn-outline{
@@ -157,6 +156,8 @@ padding:0;
     background-color: var(--light-maroon);
     color: var(--light-beige);
 }
+
+
 
 /* FOOTER */
 .footer-content{
