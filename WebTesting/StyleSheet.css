@@ -149,15 +149,13 @@ padding:0;
 
 .btn-outline{
     border: 1px solid var(--light-beige);
-    padding: 0 1em;
+    padding: 0em 1em;
 }
 
 .btn-outline:hover{
     background-color: var(--light-maroon);
     color: var(--light-beige);
 }
-
-
 
 /* FOOTER */
 .footer-content{
