@@ -9,6 +9,15 @@ static/images/banner4.jpg
 {% endblock %}
 
 {% block content %}
+<!-- text -->
+<br>
+<div class="container-lg">
+    <p class="body-text">
+        Enrol with Kala Dance group now and learn this beautiful dance form. Once you enrol,
+        we'll update you on when your first class is!
+    </p>
+</div>
+
  <!-- BUTTONS -->
 <div class="container-fluid">
     <div class="container">
@@ -30,5 +39,30 @@ static/images/banner4.jpg
             </div>
         </div>
     </div>
+</div>
+
+<div class="container-lg p-3">
+    <form>
+        <div>
+            <label for="firstname">First Name: </label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter Name">
+        </div>
+        <div>
+            <label for="surname">Surname: </label>
+            <input type="text" id="surname" name="surname" placeholder="Enter surname">
+        </div>
+        <div>
+            <label for="email">Email Address: </label>
+            <input type="email" id="email" name="email" placeholder="Enter email address">
+        </div>
+        <div>
+            <label for="phone">Phone Number: </label>
+            <input type="text" id="phone" name="phone" placeholder="Enter phone number">
+        </div>
+        <div class="text-end">
+            <button type="reset" class="btn btn-outline">Reset</button>
+            <button type="submit" class="btn btn-outline">Submit</button>
+        </div>
+    </form>
 </div>
 {% endblock %}

@@ -14,7 +14,7 @@ def BeginnerInfo():
 def NewsEvents():
     return render_template("news_events.html")
 
-@app.route('/enrol')
+@app.route('/enrol', methods=["GET", "POST"])
 def enrol():
     return render_template("enrol.html")
 
