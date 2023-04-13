@@ -42,7 +42,7 @@ static/images/banner4.jpg
 </div>
 
 <div class="container-lg p-3">
-    <form>
+    <form action="{{url_for('enrol') }}" method="POST">
         <div>
             <label for="firstname" class="form-label">First Name: </label>
             <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter name" value="{{firstname}}" required>
