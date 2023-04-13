@@ -44,21 +44,30 @@ static/images/banner4.jpg
 <div class="container-lg p-3">
     <form>
         <div>
-            <label for="firstname">First Name: </label>
-            <input type="text" id="firstname" name="firstname" placeholder="Enter Name">
+            <label for="firstname" class="form-label">First Name: </label>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter name">
         </div>
+        <br>
         <div>
-            <label for="surname">Surname: </label>
-            <input type="text" id="surname" name="surname" placeholder="Enter surname">
+            <label for="surname" class="form-label">Surname: </label>
+            <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter surname">
         </div>
+        <br>
         <div>
-            <label for="email">Email Address: </label>
-            <input type="email" id="email" name="email" placeholder="Enter email address">
+            <label for="email" class="form-label">Email Address: </label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
         </div>
+        <br>
         <div>
-            <label for="phone">Phone Number: </label>
-            <input type="text" id="phone" name="phone" placeholder="Enter phone number">
+            <label for="phone" class="form-label">Phone Number: </label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number">
         </div>
+        <br>
+        <div>
+            <label for="aboutme" class="form-label">Tell us a little bit about youself: </label>
+            <textarea id="aboutme" class="form-control" rows="5" name="aboutme" placeholder="e.g learning style, dance experience"></textarea>
+        </div>
+        <br>
         <div class="text-end">
             <button type="reset" class="btn btn-outline">Reset</button>
             <button type="submit" class="btn btn-outline">Submit</button>
