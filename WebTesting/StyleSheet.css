@@ -60,7 +60,6 @@ h3{
 }
 
 /* CONTAINERS */
-
 .container-lg{
     border: 5px;
     background-color: var(--almond);
@@ -68,8 +67,8 @@ h3{
  }
  
 .container-fluid{
-border: 0px;
-padding:0;
+    border: 0px;
+    padding:0;
 }
 
 .col-lg-7, .col-lg-5{
@@ -82,7 +81,6 @@ padding:0;
 }
 
 /* IMAGES */
-
 @media only screen and (max-width:768px){
         
     .part-image{
@@ -108,7 +106,6 @@ padding:0;
 }
 
 /* CIRCULAR IMAGES */
-
 .image-text{
     color: var(--maroon);
 }
@@ -118,7 +115,6 @@ padding:0;
 }
 
 /* NAVIGATION */
-
 .navbar{
     background-color: var(--maroon);
     border-bottom: 1px solid black;
@@ -139,8 +135,7 @@ padding:0;
     color: var(--light-beige);
     }
 
-/* BUTTONS */ 
-
+/* BUTTONS */
 .btn{
     background-color: var(--maroon);
     color: var(--beige);
@@ -157,7 +152,6 @@ padding:0;
 }
 
 /* FORM */
-
 label, input[type='text'], input[type='email'], input[type='tel'], textarea{
     font-size: 1.5em !important;
 }

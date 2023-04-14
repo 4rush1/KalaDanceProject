@@ -32,34 +32,39 @@ static/images/banner2.jpg
     </div>
 </div>
 
-<!-- COLLAPSE -->
-<br>
-<div id="accordion">
-    <!-- Collapse 1 -->
-    <a class="btn btn-outline btn-lg d-grid" data-bs-toggle="collapse" href="#collapseOne"> Classes: </a>
-       <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+<!-- CONTENT -->
+<!-- CLASSES -->
+<div class="container-lg">
+   <div class="row align-items-center">
+       <div class="col-lg-6">
            <ul>
                <li>Junior Students: 3:30-5:30 pm on Mondays, Jennifer Evans Dance Studio, Samuel Marsden</li>
                <li>Senior Students: 3:30-5:30 pm on Wednesdays, Jennifer Evans Dance Studio, Samuel Marsden</li>
                <li>Adults: 4:30-6:30 pm on Saturdays, Jennifer Evans Dance Studio, Samuel Marsden</li>
            </ul>
        </div>
-    <!-- Collapse 2 -->
-    <a class="btn btn-outline btn-lg d-grid" data-bs-toggle="collapse" href="#collapseTwo"> Equipment: </a>
-       <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-           <ul>
-               <li>Comfortable loose clothing, e.g loose pants, churidaar or salwar kameez</li>
-               <li>No footwear required while dancing</li>
-               <li>Ghungroo / bells that are tied to the feet</li>
-               <li>Notebook & pen</li>
-           </ul>
+       <div class="col-lg-6">
+           <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
        </div>
-    <!-- Collapse 3 -->
-    <a class="btn btn-outline btn-lg d-grid" data-bs-toggle="collapse" href="#collapseThree"> Practice Videos </a>
-       <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-
-       </div>
+   </div>
 </div>
-<br>
 
+<!-- EQUIPMENT -->
+<div class="container-lg">
+    <ul>
+       <li>Comfortable loose clothing, e.g loose pants, churidar or salwar kameez</li>
+        <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
+       <li>Ghungroo / bells that are tied to the feet</li>
+        <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
+       <li>Notebook & pen</li>
+        <li>No footwear required while dancing</li>
+   </ul>
+</div>
+
+<!-- COLLAPSE FOR PRACTICE VIDEOS -->
+<a class="btn btn-outline btn-lg d-grid" data-bs-toggle="collapse" href="#collapse"> Practice Videos </a>
+   <div id="collapse" class="collapse">
+       <p> BLA BLA BLA </p>
+   </div>
+<br>
 {% endblock %}
