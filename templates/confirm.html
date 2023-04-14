@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% block title %}
+Enrol
+{% endblock %}
+
+{% block banner %}
+static/images/banner4.jpg
+{% endblock %}
+
+{% block content %}
+<div class="container-lg">
+    <h1>Your Details</h1>
+
+    <table>
+        <tr> <td>First Name</td> <td> </td> </tr>
+
+    </table>
+
+    {{ form_data['firstname'] }}
+    {{ form_data['surname'] }}
+    {{ form_data['email'] }}
+    {{ form_data['phone'] }}
+    {{ form_data['aboutme'] }}
+
+    <div class="text-center">
+        <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Cancel</a>
+        <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Confirm</a>
+        <a href="{{url_for('enrol', **form_data) }}" class="btn btn-lg btn-outline">Edit</a>
+    </div>
+    <br>
+</div>
+{% endblock %}

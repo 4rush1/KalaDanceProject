@@ -19,7 +19,8 @@ def enrol():
     if request.method == "POST":
         f = request.form
         print(f)
-        return "Posted"
+        return render_template("confirm.html", form_data=f)
+
     elif request.method == "GET":
         temp_form_data={
             "firstname" : "Janet",
