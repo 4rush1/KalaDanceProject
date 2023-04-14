@@ -30,7 +30,6 @@ h1{
     text-align: center;
     font-weight: 600;
     margin: 0;
-    padding: 1em 1em;
     color: var(--maroon);
 }
 
@@ -160,7 +159,24 @@ padding:0;
 /* FORM */
 
 label, input[type='text'], input[type='email'], input[type='tel'], textarea{
-font-size: 1.5em !important;
+    font-size: 1.5em !important;
+}
+
+/* TABLE */
+table{
+    margin: auto;
+}
+
+td{
+    color: var(--maroon);
+    font-size: 1.5em;
+    padding: 0.25em;
+    border-bottom: 1px solid var(--maroon);
+}
+
+td:first-child{
+    text-align: right;
+    font-weight: bold;
 }
 
 /* FOOTER */
