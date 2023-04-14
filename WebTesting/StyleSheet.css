@@ -41,6 +41,11 @@ h3{
     color: var(--maroon);
 }
 
+.header-text{
+    color: var(--beige) !important;
+    background-color: var(--maroon) !important;
+}
+
 @media only screen and (max-width:768px){
     
     .body-text{
