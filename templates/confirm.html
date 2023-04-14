@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Enrol
+Confirm
 {% endblock %}
 
 {% block banner %}
@@ -9,20 +9,34 @@ static/images/banner4.jpg
 {% endblock %}
 
 {% block content %}
+
+<style>
+table{
+margin: auto;
+}
+
+td{
+font-size: 1.5em;
+padding: 0.25em;
+border-bottom: 1px solid black;
+}
+
+td:first-child{
+text-align: right;
+font-weight: bold;
+}
+</style>
+
 <div class="container-lg">
     <h1>Your Details</h1>
-
     <table>
-        <tr> <td>First Name</td> <td> </td> </tr>
-
+        <tr> <td>First Name</td> <td>{{ form_data['firstname'] }}</td> </tr>
+        <tr> <td>Surname</td> <td>{{ form_data['surname'] }}</td> </tr>
+        <tr> <td>Email</td> <td>{{ form_data['email'] }}</td> </tr>
+        <tr> <td>Phone</td> <td>{{ form_data['phone'] }}</td> </tr>
+        <tr> <td>About Me</td> <td>{{ form_data['aboutme'] }}</td> </tr>
     </table>
-
-    {{ form_data['firstname'] }}
-    {{ form_data['surname'] }}
-    {{ form_data['email'] }}
-    {{ form_data['phone'] }}
-    {{ form_data['aboutme'] }}
-
+    <br>
     <div class="text-center">
         <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Cancel</a>
         <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Confirm</a>
