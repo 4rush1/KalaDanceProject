@@ -29,9 +29,14 @@ h1{
     font-size: 3em;
     text-align: center;
     font-weight: 600;
-    margin: 0;
-    padding: 2em 2em;
+    padding: 0.3em 0;
     color: var(--maroon);
+}
+
+/* special colour for h1 */
+.special{
+    color: var(--beige);
+    background-color: var(--maroon);
 }
 
 h3{
@@ -42,14 +47,20 @@ h3{
     color: var(--maroon);
 }
 
-/* CONTAINERS */
+.quote{
+    font-size: 2em;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+    color: var(--maroon);
+}
 
 @media only screen and (max-width:768px){
-    
+
     .body-text{
         font-size: 1.2em;
     }
-    
+
     .h1{
         font-size:4em;
     }
@@ -57,38 +68,35 @@ h3{
     .h3{
         font-size:3em;
     }
-    .card-text{
-        font-size: 1em;
-    }
 }
 
+/* CONTAINERS */
 .container-lg{
-    border: 5px;
+    border: 0px solid blue;
     background-color: var(--almond);
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
+    margin-top: 1em;
  }
- 
+
 .container-fluid{
-border: 0px;
-padding:0;
+    border: 0px;
+    padding:0;
 }
 
-.col-lg-7, .col-lg-5{
+.col-lg-6{
     border: 0px solid blue;
 }
 
 .row{
     border: 0px solid red;
-    padding: 1em 0 1em 0; 
+    padding: 1em 0 1em 0;
 }
 
 /* IMAGES */
-
 @media only screen and (max-width:768px){
-        
+
     .part-image{
         max-width: 100%;
-        
     }
 }
 
@@ -105,21 +113,20 @@ padding:0;
 }
 
 .banner{
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 /* CIRCULAR IMAGES */
-
 .image-text{
     color: var(--maroon);
 }
 
 .col-md-4{
     text-align: center;
+    margin-bottom: 2.5em;
 }
 
 /* NAVIGATION */
-
 .navbar{
     background-color: var(--maroon);
     border-bottom: 1px solid black;
@@ -140,22 +147,45 @@ padding:0;
     color: var(--light-beige);
     }
 
-/* BUTTONS */ 
+.material-icons{
+    padding: 0.25em 0.2em;
+}
 
+/* BUTTONS */
 .btn{
     background-color: var(--maroon);
-    color: var(--light-beige);
-
+    color: var(--beige);
 }
 
 .btn-outline{
     border: 1px solid var(--light-beige);
-    padding: 0 1em;
+    padding: 0em 1em;
 }
 
 .btn-outline:hover{
     background-color: var(--light-maroon);
     color: var(--light-beige);
+}
+
+/* FORM */
+label, input[type='text'], input[type='email'], input[type='tel'], textarea{
+    font-size: 1em !important;
+    color: var(--maroon);
+}
+
+/* TABLE */
+table{
+    margin:auto;
+}
+td{
+    color: var(--maroon);
+    font-size: 1.5em;
+    padding: 0.25em;
+    border-bottom: 1px solid var(--maroon);
+}
+td:first-child{
+    text-align: right;
+    font-weight: bold;
 }
 
 /* FOOTER */

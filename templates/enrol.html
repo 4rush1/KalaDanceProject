@@ -19,34 +19,34 @@ static/images/banner4.jpg
 
 <div class="container-lg p-3">
     <form action="{{url_for('enrol') }}" method="POST">
-        <div>
-            <label for="firstname" class="form-label">First Name: </label>
+        <div class="form-floating">
             <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter name" value="{{firstname}}" required>
+            <label for="firstname" class="form-label">First Name: </label>
         </div>
         <br>
-        <div>
-            <label for="surname" class="form-label">Surname: </label>
+        <div class="form-floating">
             <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter surname" value="{{surname}}" required>
+            <label for="surname" class="form-label">Surname: </label>
         </div>
         <br>
-        <div>
-            <label for="email" class="form-label">Email Address: </label>
+        <div class="form-floating">
             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="{{email}}" required>
+            <label for="email" class="form-label">Email Address: </label>
         </div>
         <br>
-        <div>
-            <label for="phone" class="form-label">Phone Number: </label>
+        <div class="form-floating">
             <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" value="{{phone}}" required>
+            <label for="phone" class="form-label">Phone Number: </label>
         </div>
         <br>
         <div>
             <label for="aboutme" class="form-label">Tell us a little bit about youself: </label>
-            <textarea id="aboutme" class="form-control" rows="5" name="aboutme"  placeholder="e.g learning style, dance experience">{{aboutme}}</textarea>
+            <textarea id="aboutme" class="form-control" rows="7" name="aboutme"  placeholder="e.g learning style, dance experience">{{aboutme}}</textarea>
         </div>
         <br>
         <div class="text-end">
-            <button type="reset" class="btn btn-outline">Reset</button>
-            <button type="submit" class="btn btn-outline">Submit</button>
+            <button type="reset" class="btn btn-lg btn-outline">Reset</button>
+            <button type="submit" class="btn btn-lg btn-outline">Submit</button>
         </div>
     </form>
 </div>
