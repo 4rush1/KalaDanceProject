@@ -50,10 +50,9 @@ h3{
 .quote{
     font-size: 2em;
     text-align: center;
-    font-weight: 1000;
+    font-weight: 600;
     margin: 0;
     color: var(--maroon);
-    background-color: var(--beige);
 }
 
 @media only screen and (max-width:768px){
@@ -114,7 +113,7 @@ h3{
 }
 
 .banner{
-    margin-top: 5em;
+    margin-top: 0em;
 }
 
 /* CIRCULAR IMAGES */
