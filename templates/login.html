@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Enrol
+Login/Signup
 {% endblock %}
 
 {% block banner %}
@@ -13,12 +13,12 @@ static/images/banner4.jpg
 <br>
 <div class="container-lg">
     <p class="quote">
-        Enrol with Kala Dance group now and we'll update you on when your first class is!
+        Signup/login and become apart of the community!
     </p>
 </div>
 
 <div class="container-lg p-3">
-    <form action="{{url_for('enrol') }}" method="POST">
+    <form action="{{url_for('login') }}" method="POST">
         <div class="form-floating">
             <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter name" value="{{firstname}}" required>
             <label for="firstname" class="form-label">First Name: </label>
@@ -32,22 +32,6 @@ static/images/banner4.jpg
         <div class="form-floating">
             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="{{email}}" required>
             <label for="email" class="form-label">Email Address: </label>
-        </div>
-        <br>
-        <div class="form-floating">
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" value="{{phone}}" required>
-            <label for="phone" class="form-label">Phone Number: </label>
-        </div>
-        <br>
-        <label for="SelGroup" class="form-label">Select your age group</label>
-        <select class="form-select" id="SelGroup" name="SelGroupList" required>
-            <option>Junior student (Year 7-10)</option>
-            <option>Senior student (Year 11-13)</option>
-        </select>
-        <br>
-        <div>
-            <label for="aboutme" class="form-label">Tell us a little bit about youself: </label>
-            <textarea id="aboutme" class="form-control" rows="7" name="aboutme"  placeholder="e.g learning style, dance experience">{{aboutme}}</textarea>
         </div>
         <br>
         <div class="text-end">

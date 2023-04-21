@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Confirm
+{% endblock %}
+
+{% block banner %}
+static/images/banner4.jpg
+{% endblock %}
+
+{% block content %}
+<div class="container-lg">
+    <h1>Your Details</h1>
+    <table>
+        <tr> <td>First Name</td> <td>{{ login_data['firstname'] }}</td> </tr>
+        <tr> <td>Surname</td> <td>{{ login_data['surname'] }}</td> </tr>
+        <tr> <td>Email</td> <td>{{ login_data['email'] }}</td> </tr>
+    </table>
+    <br>
+    <div class="text-center">
+        <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Cancel</a>
+        <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Confirm</a>
+        <a href="{{url_for('login', **login_data) }}" class="btn btn-lg btn-outline">Edit</a>
+    </div>
+    <br>
+</div>
+{% endblock %}

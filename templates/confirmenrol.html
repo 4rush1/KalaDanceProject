@@ -12,17 +12,17 @@ static/images/banner4.jpg
 <div class="container-lg">
     <h1>Your Details</h1>
     <table>
-        <tr> <td>First Name</td> <td>{{ form_data['firstname'] }}</td> </tr>
-        <tr> <td>Surname</td> <td>{{ form_data['surname'] }}</td> </tr>
-        <tr> <td>Email</td> <td>{{ form_data['email'] }}</td> </tr>
-        <tr> <td>Phone</td> <td>{{ form_data['phone'] }}</td> </tr>
-        <tr> <td>About Me</td> <td>{{ form_data['aboutme'] }}</td> </tr>
+        <tr> <td>First Name</td> <td>{{ enrol_data['firstname'] }}</td> </tr>
+        <tr> <td>Surname</td> <td>{{ enrol_data['surname'] }}</td> </tr>
+        <tr> <td>Email</td> <td>{{ enrol_data['email'] }}</td> </tr>
+        <tr> <td>Phone</td> <td>{{ enrol_data['phone'] }}</td> </tr>
+        <tr> <td>About Me</td> <td>{{ enrol_data['aboutme'] }}</td> </tr>
     </table>
     <br>
     <div class="text-center">
         <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Cancel</a>
         <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Confirm</a>
-        <a href="{{url_for('enrol', **form_data) }}" class="btn btn-lg btn-outline">Edit</a>
+        <a href="{{url_for('enrol', **enrol_data) }}" class="btn btn-lg btn-outline">Edit</a>
     </div>
     <br>
 </div>
