@@ -19,7 +19,7 @@ def enrol():
     if request.method == "POST":
         f = request.form
         print(f)
-        return render_template("confirmenrol.html", enrol_data=f)
+        return render_template("confirm.html", enrol_data=f)
 
     elif request.method == "GET":
         temp_form_data={
@@ -30,21 +30,6 @@ def enrol():
             "aboutme" : "I am a good dancer",
         }
         return render_template("enrol.html", **temp_form_data)
-
-@app.route('/signup', methods=["GET", "POST"])
-def signup():
-    if request.method == "POST":
-        f = request.form
-        print(f)
-        return render_template("confirmsignup.html", signup_data=f)
-
-    elif request.method == "GET":
-        temp_form_data_2 = {
-            "firstname": "Janet",
-            "surname": "Jackson",
-            "email": "jj@gmail.com",
-        }
-        return render_template("signup.html", **temp_form_data_2)
 
 if __name__ == "__main__":
     app.run(debug=True)
