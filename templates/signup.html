@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Login/Signup
+Signup
 {% endblock %}
 
 {% block banner %}
@@ -13,12 +13,12 @@ static/images/banner4.jpg
 <br>
 <div class="container-lg">
     <p class="quote">
-        Signup/login and become apart of the community!
+        Signup and become apart of the community!
     </p>
 </div>
 
 <div class="container-lg p-3">
-    <form action="{{url_for('login') }}" method="POST">
+    <form action="{{url_for('signup') }}" method="POST">
         <div class="form-floating">
             <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter name" value="{{firstname}}" required>
             <label for="firstname" class="form-label">First Name: </label>

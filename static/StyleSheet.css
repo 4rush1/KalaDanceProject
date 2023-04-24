@@ -157,6 +157,10 @@ h3{
     color: var(--beige);
     }
 
+nav .btn-outline{
+    display: inline-block;
+}
+
 .material-icons{
     padding: 0.25em 0.2em;
 }
