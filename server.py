@@ -26,7 +26,7 @@ def enrol():
             "firstname" : "Janet",
             "surname" : "Jackson",
             "email" : "jj@gmail.com",
-            "phone" : "04568765434",
+            "selgroup" : "",
             "aboutme" : "I am a good dancer",
         }
         return render_template("enrol.html", **temp_form_data)
