@@ -57,7 +57,6 @@ h3{
 
 .blockquote{
     font-size: 2.5em;
-    text-align: right;
     font-weight: 600;
     color: var(--beige);
     padding-right: 2em;
@@ -65,7 +64,6 @@ h3{
 
 .blockquote-footer{
     font-size: 2em;
-    text-align: right;
     font-weight: 600;
     color: var(--beige);
     padding-right: 4em;
@@ -74,7 +72,6 @@ h3{
 
 .quote{
     font-size: 1.5em;
-    text-align: right;
     font-weight: 600;
     color: var(--maroon);
     padding-right: 2em;
@@ -83,7 +80,6 @@ h3{
 
 .quote-footer{
     font-size: 1em;
-    text-align: right;
     font-weight: 600;
     color: var(--maroon);
     padding-right: 4em;
@@ -91,12 +87,12 @@ h3{
 }
 
 .card-title{
+    display: block;
     font-size: 11em;
     text-align: center;
     font-weight: 600;
     margin-top: 1em;
     color: var(--beige);
-    display: block;
 }
 
 @media only screen and (max-width:768px){
@@ -163,6 +159,14 @@ h3{
 
 .banner{
     margin-top: 2em;
+}
+
+.card{
+    position: relative;
+}
+
+.card-img-overlay{
+    position: absolute;
 }
 
 /* CIRCULAR IMAGES */
