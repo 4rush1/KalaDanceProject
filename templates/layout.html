@@ -48,7 +48,22 @@
 </div>
 
 <!-- BANNER -->
-<img class="img-fluid part-img banner" src="{% block banner %}{% endblock %}" alt="">
+<div class="card">
+    <img class="img-fluid part-img banner card-img-top" src="{% block banner %}{% endblock %}" alt="">
+  <div class="card-img-overlay">
+      <!-- BANNER TITLE -->
+      <h4 class="card-title">{% block header %}{% endblock %}</h4>
+      <!-- BANNER QUOTE -->
+      <figure class="text-end">
+          <blockquote class="blockquote">
+              <p>{% block quote %}{% endblock %}</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+             <cite title="Source Title">{% block source %}{% endblock %}</cite>
+          </figcaption>
+      </figure>
+  </div>
+</div>
 
 {% block content %}
 {% endblock %}

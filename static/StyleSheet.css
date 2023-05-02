@@ -41,12 +41,6 @@ h2{
     color: var(--maroon);
 }
 
-/* special colour for h1 */
-.special{
-    color: var(--beige);
-    background-color: var(--maroon);
-}
-
 h3{
     font-size: 2em;
     text-align: center;
@@ -55,12 +49,54 @@ h3{
     color: var(--maroon);
 }
 
-.quote{
+/* special colour for h1 */
+.special{
+    color: var(--beige);
+    background-color: var(--maroon);
+}
+
+.blockquote{
+    font-size: 2.5em;
+    text-align: right;
+    font-weight: 600;
+    color: var(--beige);
+    padding-right: 2em;
+}
+
+.blockquote-footer{
     font-size: 2em;
+    text-align: right;
+    font-weight: 600;
+    color: var(--beige);
+    padding-right: 4em;
+    padding-bottom: 1em;
+}
+
+.quote{
+    font-size: 1.5em;
+    text-align: right;
+    font-weight: 600;
+    color: var(--maroon);
+    padding-right: 2em;
+    padding-top: 1em;
+}
+
+.quote-footer{
+    font-size: 1em;
+    text-align: right;
+    font-weight: 600;
+    color: var(--maroon);
+    padding-right: 4em;
+    padding-bottom: 1em;
+}
+
+.card-title{
+    font-size: 11em;
     text-align: center;
     font-weight: 600;
-    margin: 0;
-    color: var(--maroon);
+    margin-top: 1em;
+    color: var(--beige);
+    display: block;
 }
 
 @media only screen and (max-width:768px){
@@ -126,7 +162,7 @@ h3{
 }
 
 .banner{
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 /* CIRCULAR IMAGES */
