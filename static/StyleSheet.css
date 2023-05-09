@@ -18,6 +18,79 @@ body{
     background-color: var(--beige);
 }
 
+/* NAVIGATION */
+.navbar{
+    background-color: var(--maroon);
+    border-bottom: 1px solid black;
+    }
+
+.nav-item:hover{
+    background-color: var(--light-maroon);
+    }
+
+.nav-link{
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--light-beige);
+    }
+
+.nav-link:hover{
+    color: var(--beige);
+    }
+
+nav .btn-outline{
+    display: inline-block;
+}
+
+.material-icons{
+    padding: 0.25em 0.2em;
+}
+
+/* BUTTONS */
+.btn{
+    background-color: var(--maroon);
+    color: var(--light-beige);
+}
+
+.btn-outline{
+    border: 1px solid var(--light-beige);
+   padding: 0em 1em;
+}
+
+.btn-outline:hover{
+    background-color: var(--light-maroon);
+    color: var(--beige);
+}
+
+/* CIRCULAR IMAGES */
+.image-text{
+    color: var(--maroon);
+}
+
+.col-md-4{
+    text-align: center;
+    margin-bottom: 2.5em;
+}
+
+.img-size{
+    display: block;
+}
+/* -- circular overlay ---*/
+    .circular-overlay{
+
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:100%;
+    transform:translate(-50%,-50%);
+    border: 0px solid green;
+
+    }
+    .circular-overlay p{
+    color:var(--light-beige);
+    font-size: 1em;
+    }
+
 /* TEXT */
 .body-text{
     font-size: 1em;
@@ -55,21 +128,6 @@ h3{
     background-color: var(--maroon);
 }
 
-.blockquote{
-    font-size: 2.5em;
-    font-weight: 600;
-    color: var(--beige);
-    padding-right: 2em;
-}
-
-.blockquote-footer{
-    font-size: 2em;
-    font-weight: 600;
-    color: var(--beige);
-    padding-right: 4em;
-    padding-bottom: 1em;
-}
-
 .quote{
     font-size: 1.5em;
     font-weight: 600;
@@ -84,30 +142,6 @@ h3{
     color: var(--maroon);
     padding-right: 4em;
     padding-bottom: 1em;
-}
-
-.card-title{
-    display: block;
-    font-size: 11em;
-    text-align: center;
-    font-weight: 600;
-    margin-top: 1em;
-    color: var(--beige);
-}
-
-@media only screen and (max-width:768px){
-
-    .body-text{
-        font-size: 1.2em;
-    }
-
-    .h1{
-        font-size:4em;
-    }
-
-    .h3{
-        font-size:3em;
-    }
 }
 
 /* CONTAINERS */
@@ -138,13 +172,6 @@ h3{
 }
 
 /* IMAGES */
-@media only screen and (max-width:768px){
-
-    .part-image{
-        max-width: 100%;
-    }
-}
-
 .part-img{
     max-width: 100%;
     display: block;
@@ -157,75 +184,32 @@ h3{
     margin: auto;
 }
 
+/* --- banner styles --- */
+.text-float{
+    font-size: 3em;
+    text-align: center;
+    font-weight: 600;
+    color: var(--beige);
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:100%;
+    transform:translate(-50%,-50%);
+    border: 2px solid green;
+
+    }
+.text-float .header{
+    font-size: 3em;
+    }
+
+.text-float .header-quote{
+    font-size: 0.5em;
+    text-align: right;
+    padding: 0em 1em;
+    }
+
 .banner{
     margin-top: 2em;
-}
-
-.card{
-    position: relative;
-}
-
-.card-img-overlay{
-    position: absolute;
-}
-
-/* CIRCULAR IMAGES */
-.image-text{
-    color: var(--maroon);
-}
-
-.col-md-4{
-    text-align: center;
-    margin-bottom: 2.5em;
-}
-
-.img-size{
-    display: block;
-}
-
-/* NAVIGATION */
-.navbar{
-    background-color: var(--maroon);
-    border-bottom: 1px solid black;
-    }
-
-.nav-item:hover{
-    background-color: var(--light-maroon);
-    }
-
-.nav-link{
-    text-align: center;
-    font-size: 1.5em;
-    color: var(--light-beige);
-    padding: 1em 1em;
-    }
-
-.nav-link:hover{
-    color: var(--beige);
-    }
-
-nav .btn-outline{
-    display: inline-block;
-}
-
-.material-icons{
-    padding: 0.25em 0.2em;
-}
-
-/* BUTTONS */
-.btn{
-    background-color: var(--maroon);
-    color: var(--light-beige);
-}
-
-.btn-outline{
-    border: 1px solid var(--light-beige);
-    padding: 0em 1em;
-}
-
-.btn-outline:hover{
-    background-color: var(--light-maroon);
-    color: var(--beige);
 }
 
 /* FORM */
@@ -260,4 +244,42 @@ td:first-child{
 .footer-content p:first-child{
     font-weight:600;
     font-size: 1.5em;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width:992px){
+
+   .text-float .header{
+     font-size:2.3em;
+     }
+
+}
+
+@media only screen and (max-width:768px){
+
+    .body-text{
+        font-size: 1.2em;
+    }
+
+    .part-image{
+        max-width: 100%;
+    }
+
+    .h1{
+        font-size:4em;
+    }
+
+    .h3{
+        font-size:3em;
+    }
+
+    .text-float .header{
+     font-size:1.5em;
+     }
+
+   .text-float .header-quote{
+        display:none;
+    }
+
 }
