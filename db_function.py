@@ -1,6 +1,6 @@
 import sqlite3
 import csv
-import string #for strip
+
 
 
 def run_commit_query(sql_query,values_tuple, file_path):

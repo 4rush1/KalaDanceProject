@@ -35,17 +35,17 @@ Natya Shastra
 <div class="container-lg p-3">
     <form action="{{url_for('enrol') }}" method="POST">
         <div class="form-floating">
-            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter name" value="{{firstname}}" required>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder=" " value="{{firstname}}" required>
             <label for="firstname" class="form-label">First Name: </label>
         </div>
         <br>
         <div class="form-floating">
-            <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter surname" value="{{surname}}" required>
+            <input type="text" class="form-control" id="surname" name="surname" placeholder=" " value="{{surname}}" required>
             <label for="surname" class="form-label">Surname: </label>
         </div>
         <br>
         <div class="form-floating">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="{{email}}" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder=" " value="{{email}}" required>
             <label for="email" class="form-label">Email Address: </label>
         </div>
         <br>
@@ -60,6 +60,11 @@ Natya Shastra
         <div>
             <label for="aboutme" class="form-label">Tell us a little bit about youself: </label>
             <textarea id="aboutme" class="form-control" rows="7" name="aboutme"  placeholder="e.g learning style, dance experience">{{aboutme}}</textarea>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" name="password" placeholder=" " value="{{password}}" required>
+            <label for="password" class="form-label">Password: </label>
         </div>
         <br>
         <div class="text-end">

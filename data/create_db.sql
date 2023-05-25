@@ -38,16 +38,19 @@ values( 'Akshara', 'Goenka', 'akshu@gmail.com', 'teacher', 'Learnt the Banaras a
 /* CREATING NEWS */
 insert into news( title, subtitle, content, news_date, member_id)
 values( 'Diwali Dance performance',
-       'Learn dance routine before the performance!' || char(10) ||
-       'Kala dance is performing for a Diwali festival in Welly, come along and watch us! For those in the group, please learn the dance routine before then!',
+       'Learn dance routine before the performance!',
+       'Kala dance is performing for a Diwali festival in Welly, come along and watch us! ' || char(10) ||
+       'For those in the group, ' ||
+       'please learn the dance routine before then!',
        '2023-05-12 20:30:00', /* SQLite format */
-       (select member_id from member where firstname="Akshara")
+       (select member_id from member where firstname='Akshara')
        );
 
 insert into news( title, subtitle, content, news_date, member_id)
 values( 'Class cancelled',
-       'enjoy your long weekend, but learn the tatkaar by next week' || char(10) ||
-       'Unfortunately class has been cancelled on the 5th of June as it is King Charle''s Birthday. Please learn Tatkaar moves before our next class',
+       'enjoy your long weekend, but learn the tatkaar by next week',
+       'Unfortunately class has been cancelled on the 5th of June as it is King Charle''s Birthday. ' ||
+       'Please learn Tatkaar moves before our next class',
        '2023-06-01 22:45:00',
-       (select member_id from member where firstname="Nandini")
+       (select member_id from member where firstname='Nandini')
        );
