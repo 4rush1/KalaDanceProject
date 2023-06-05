@@ -233,6 +233,37 @@ td:first-child{
     font-weight: bold;
 }
 
+/* NEWS */
+.title{
+    font-size: 2.7em;
+    text-align: center;
+    font-weight: 600;
+    color: var(--maroon);
+    padding-bottom: 0.125em;
+}
+
+.subtitle{
+    font-size: 2em;
+    text-align: center;
+    font-weight: 550;
+    color: var(--maroon);
+    padding-bottom: 0.125em;
+}
+
+.news-text{
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    color: var(--maroon);
+    padding-bottom: 0.5em;
+}
+
+.news-meta{
+    font-size: 1em;
+    color: var(--maroon);
+}
+
 /* FOOTER */
 .footer-content{
     background-color: var(--maroon);
