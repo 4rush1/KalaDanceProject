@@ -149,13 +149,21 @@ h3{
     border: 0px solid blue;
     background-color: var(--almond);
     margin-bottom: 2em;
-    margin-top: 1em;
  }
 
 .container-collapse{
     border: 0px solid blue;
     margin-top: 1em;
  }
+
+.glossary{
+    border: 0px solid blue;
+    background-color: var(--almond);
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 2em 2em;
+    border-radius: 40px;
+}
 
 .container-fluid{
     border: 0px;
@@ -170,6 +178,17 @@ h3{
     border: 0px solid red;
     padding: 1em 0 1em 0;
 }
+
+.news{
+    border: 0px solid blue;
+    background-color: var(--almond);
+    padding: 1em 2em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 40px;
+ }
 
 /* IMAGES */
 .part-img{
@@ -203,7 +222,7 @@ h3{
     }
 
 .text-float .header-quote{
-    font-size: 0.5em;
+    font-size: 0.6em;
     text-align: right;
     padding: 0em 1em;
     }
@@ -312,5 +331,13 @@ td:first-child{
    .text-float .header-quote{
         display:none;
     }
+
+   .title{
+     font-size:2.3em;
+   }
+
+   .subtitle{
+       font-size:1.5em;
+   }
 
 }

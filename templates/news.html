@@ -13,67 +13,30 @@ NEWS
 {% endblock %}
 
 {% block content %}
-<div class="container-lg p-3">
+<!-- to enter news -->
+<div class="news">
     <div class="text-end">
         <a class="btn btn-lg btn-outline" href="">Add News</a>
     </div>
 </div>
-<div class="container-lg p-3">
-    <div class="news p-4 my-4">
-        <div class="title">Title</div>
-        <div class="subtitle"> Subtitle </div>
-        <br>
-        <p class="news-text">
-        content
-         </p>
-    </div>
+
+<!-- news structure -->
+<!-- LOOP -->
+{% for row in news %}
+<div class="news">
+    <div class="title">{{ row['title'] }}</div>
+    <div class="subtitle">{{ row['subtitle'] }}</div>
+    <hr>
+    <p class="news-text">{{ row['content'] }}</p>
     <div class="news-meta text-end">
-        <p><b> member and data </b></p>
+    <p><b>{{ row[''] }}</b></p>
     </div>
+    <!-- buttons -->
     <div class="text-end">
         <a class="btn btn-lg btn-outline" href="">Update</a>
         <a class="btn btn-lg btn-outline" href="">Delete</a>
     </div>
 </div>
-<div class="container-lg p-3">
-    <div class="news">
-        <div class="title">Rotary Club Arts festival performance 20th May</div>
-        <div class="subtitle">Fully learn the dance- with emotions</div>
-        <br>
-        <p class="news-text">
-        We are dancing to “Mein Radha Teri”,
-        the moves for this dance must be learnt
-        before 20th May, including the tukda.
-        Make sure to practice at home!
-         </p>
-    </div>
-     <div class="news-meta text-end">
-        <p><b>Posted by Aishwarya on 5 May 23 </b></p>
-    </div>
-    <div class="text-end">
-        <a class="btn btn-lg btn-outline" href="">Update</a>
-        <a class="btn btn-lg btn-outline" href="">Delete</a>
-    </div>
-</div>
-<div class="container-lg p-3">
-     <div class="news">
-        <div class="title">Indian Independence Day performance 15th August</div>
-        <div class="subtitle">Pick up dance costume from the dance studio</div>
-        <br>
-        <p class="news-text">
-        For our independence day dance performance some of you are
-        wearing an orange Anarkali, some of you are wearing green
-        and some are wearing white. These have been assigned to you.
-        Please make sure to pickup your Anarkali from the dance studio
-        at 5pm (before the performance)
-         </p>
-     </div>
-    <div class="news-meta text-end">
-        <p><b>Posted by Usha on 28 April 23 </b></p>
-    </div>
-    <div class="news-meta text-end">
-        <a class="btn btn-lg btn-outline" href="">Update</a>
-        <a class="btn btn-lg btn-outline" href="">Delete</a>
-    </div>
-</div>
+{% endfor %}
+
 {% endblock %}

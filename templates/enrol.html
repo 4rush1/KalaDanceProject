@@ -13,25 +13,16 @@ ENROL
 {% endblock %}
 
 {% block quote %}
-“ यतो हस्त स्ततो दृष्टि
-यतो दृष्टि स्ततो मनः
-यतो मनः स्ततो भाव: <br>
-यतो भाव स्ततो रस: ”
+Enrol with Kala Dance group and <br>
+join your first class!
 {% endblock %}
 
 {% block source %}
-Natya Shastra
+
 {% endblock %}
 
 {% block content %}
-<!-- text -->
 <br>
-<div class="container-lg">
-    <p class="quote">
-        Enrol with Kala Dance group now and we'll update you on when your first class is!
-    </p>
-</div>
-
 <div class="container-lg p-3">
     <form action="{{url_for('enrol') }}" method="POST">
         <div class="form-floating">
