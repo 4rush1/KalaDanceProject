@@ -19,7 +19,7 @@ create table news(
     title text not null unique,
     subtitle text not null unique,
     content text not null unique,
-    news_date date not null,
+    newsdate date not null,
     member_id integer not null,
     foreign key(member_id) references member(member_id)
 );
@@ -36,7 +36,7 @@ insert into member( firstname, surname, email, age_group, about_me, password, au
 values( 'Akshara', 'Goenka', 'akshu@gmail.com', 'teacher', 'Learnt the Banaras and Lucknow gharana from India', 'temp', 0 );
 
 /* CREATING NEWS */
-insert into news( title, subtitle, content, news_date, member_id)
+insert into news( title, subtitle, content, newsdate, member_id)
 values( 'Diwali Dance performance',
        'Learn dance routine before the performance!',
        'Kala dance is performing for a Diwali festival in Welly, come along and watch us! ' || char(10) ||
@@ -46,7 +46,7 @@ values( 'Diwali Dance performance',
        (select member_id from member where firstname='Akshara')
        );
 
-insert into news( title, subtitle, content, news_date, member_id)
+insert into news( title, subtitle, content, newsdate, member_id)
 values( 'Class cancelled',
        'enjoy your long weekend, but learn the tatkaar by next week',
        'Unfortunately class has been cancelled on the 5th of June as it is King Charle''s Birthday. ' ||

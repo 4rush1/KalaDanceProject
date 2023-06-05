@@ -5,6 +5,12 @@ from datetime import datetime
 app = Flask(__name__)
 db_path = 'data/dance_db.sqlite'
 
+#format of date, year, month, day, hour, minute, second
+#string format time
+@app.template_filter()
+def news_date(sqlite_dt):
+    x = datetime.strptime(sqlite_dt, '%Y-%m-%d %H:%M:%S')
+    return x.strftime(sqlite_dt, '%a-%d-%b %y %H:%M')
 
 @app.route('/')
 def index():

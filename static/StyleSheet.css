@@ -253,14 +253,6 @@ td:first-child{
 }
 
 /* NEWS */
-.title{
-    font-size: 2.7em;
-    text-align: center;
-    font-weight: 600;
-    color: var(--maroon);
-    padding-bottom: 0.125em;
-}
-
 .subtitle{
     font-size: 2em;
     text-align: center;
@@ -331,10 +323,6 @@ td:first-child{
    .text-float .header-quote{
         display:none;
     }
-
-   .title{
-     font-size:2.3em;
-   }
 
    .subtitle{
        font-size:1.5em;

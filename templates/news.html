@@ -24,19 +24,17 @@ NEWS
 <!-- LOOP -->
 {% for row in news %}
 <div class="news">
-    <div class="title">{{ row['title'] }}</div>
+    <h2>{{ row['title'] }}</h2>
     <div class="subtitle">{{ row['subtitle'] }}</div>
     <hr>
     <p class="news-text">{{ row['content'] }}</p>
-    <div class="news-meta text-end">
-    <p><b>{{ row[''] }}</b></p>
-    </div>
+    <div class="news-meta text-end">Posted by {{ row['firstname'] }} on {{ row['newsdate'] | news_date }}</div>
     <!-- buttons -->
-    <div class="text-end">
+    <div class="news-meta">
         <a class="btn btn-lg btn-outline" href="">Update</a>
         <a class="btn btn-lg btn-outline" href="">Delete</a>
     </div>
 </div>
-{% endfor %}
 
+{% endfor %}
 {% endblock %}
