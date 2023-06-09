@@ -10,7 +10,7 @@ db_path = 'data/dance_db.sqlite'
 @app.template_filter()
 def news_date(sqlite_dt):
     x = datetime.strptime(sqlite_dt, '%Y-%m-%d %H:%M:%S')
-    return x.strftime(sqlite_dt, '%a-%d-%b %y %H:%M')
+    return x.strftime('%a-%d-%b %y %H:%M')
 
 @app.route('/')
 def index():
@@ -25,10 +25,10 @@ def BeginnerInfo():
 @app.route('/news')
 def news():
     # query for the news page
-    sql = """ select news.news_id, news.title, news.subtitle, news.content, news.news_date, member.firstname 
+    sql = """ select news.news_id, news.title, news.subtitle, news.content, news.newsdate, member.firstname 
     from news 
     join member on news.member_id = member.member_id
-    order by news.news_date desc;
+    order by news.newsdate desc;
     """
     result = run_search_query_tuples(sql, (), db_path, True)
     print(result)

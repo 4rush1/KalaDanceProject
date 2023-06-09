@@ -33,6 +33,7 @@ INITIAL INFO
                    <li>Tatkaar: the basis of all footwork, you tap your feet in the
                        pattern right, left, right, left, left, right, left, right, right… and so on
                    <li>tukda: pre-set footwork and hand movements </li>
+                   <li>tihai: repeating a tukda 3 times </li>
                    <li>Chakar: spinning </li>
                    <li>Chakardaar tukda: pre-set footwork and hand movements which are repeated 3 times </li>
                    <li>Hastak: hand positions for dance, each hand position represents something </li>
@@ -43,6 +44,8 @@ INITIAL INFO
            </div>
        </div>
 </div>
+<!-- Carousel -->
+
 <!-- CLASSES -->
 <br>
 <div class="container-lg">
@@ -57,8 +60,8 @@ INITIAL INFO
                <ul>
                    <li>Learn how to count kathak beats (2 days) </li>
                    <li>Learn basic tatkaar (2 weeks) </li>
-                   <li>Learn tihai (2 weeks) </li>
                    <li>Learn basic tukda (4 weeks) </li>
+                   <li>Learn tihai (2 weeks) </li>
                    <li>Learn chakkar (1 week) </li>
                </ul>
            </ol>
@@ -79,6 +82,7 @@ INITIAL INFO
        </div>
    </div>
 </div>
+
 <!-- EQUIPMENT -->
 <div class="container-lg">
    <div class="row align-items-center">
@@ -93,8 +97,45 @@ INITIAL INFO
            </ul>
        </div>
         <div class="col-lg-6">
-           <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
-       </div>
+            <!-- Carousel -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
+                        <div class="carousel-caption">
+                            <h3>Churidaar</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
+                        <div class="carousel-caption">
+                            <h3>Salwaar</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid part-img" src="static/images/placeholder_1200_1200.png">
+                        <div class="carousel-caption">
+                            <h3>Ghungroo</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+
    </div>
 </div>
 {% endblock %}

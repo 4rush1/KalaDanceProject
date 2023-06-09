@@ -122,6 +122,17 @@ h3{
     color: var(--maroon);
 }
 
+h4{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--maroon);
+}
+
+li{
+    color: var(--maroon);
+}
+
 /* special colour for h1 */
 .special{
     color: var(--beige);
@@ -214,7 +225,7 @@ h3{
     top:50%;
     width:100%;
     transform:translate(-50%,-50%);
-    border: 2px solid green;
+    border: 0px solid green;
 
     }
 .text-float .header{
