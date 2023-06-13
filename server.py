@@ -10,7 +10,7 @@ db_path = 'data/dance_db.sqlite'
 @app.template_filter()
 def news_date(sqlite_dt):
     x = datetime.strptime(sqlite_dt, '%Y-%m-%d %H:%M:%S')
-    return x.strftime('%a-%d-%b %y %H:%M')
+    return x.strftime('%a-%d-%b %y %I:%M %p')
 
 @app.route('/')
 def index():
@@ -35,6 +35,11 @@ def news():
     return render_template("news.html", news=result)
 
 
+@app.route('/news_cud')
+def news_cud():
+    return render_template("news_cud.html")
+
+
 @app.route('/enrol', methods=["GET", "POST"])
 def enrol():
     if request.method == "POST":
@@ -51,7 +56,6 @@ def enrol():
             "aboutme" : "I am a good dancer",
         }
         return render_template("enrol.html", **temp_form_data)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
