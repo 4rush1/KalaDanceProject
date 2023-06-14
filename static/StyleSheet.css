@@ -133,10 +133,18 @@ li{
     color: var(--maroon);
 }
 
-/* special colour for h1 */
+/* special colour for text */
 .special{
     color: var(--beige);
     background-color: var(--maroon);
+}
+
+.special_text{
+    color: var(--beige);
+}
+
+.alert{
+   color: red;
 }
 
 .quote{
@@ -190,10 +198,10 @@ li{
     padding: 1em 0 1em 0;
 }
 
-.news{
+.container_round{
     border: 0px solid blue;
     background-color: var(--almond);
-    padding: 1em 2em;
+    padding: 2em 2em;
     margin-bottom: 2em;
     margin-top: 2em;
     margin-left: 2em;

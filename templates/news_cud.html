@@ -14,7 +14,7 @@ ADD NEWS
 
 {% block content %}
 <br>
-<div class="news p-3">
+<div class="container_round p-3">
     <h2>Please enter / update your news form</h2>
     <form action="{{ url_for('news_cud', id=id, task=task) }}" method="POST">
         <div class="form-floating">

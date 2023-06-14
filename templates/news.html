@@ -20,7 +20,7 @@ news and events!
 
 {% block content %}
 <!-- to enter news -->
-<div class="news">
+<div class="container_round">
     <div class="text-end">
         <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=0, task='add') }}">Add News</a>
     </div>
@@ -29,7 +29,7 @@ news and events!
 <!-- news structure -->
 <!-- LOOP -->
 {% for row in news %}
-<div class="news">
+<div class="container_round">
     <h2>{{ row['title'] }}</h2>
     <div class="subtitle">{{ row['subtitle'] }}</div>
     <hr>
@@ -37,8 +37,8 @@ news and events!
     <div class="news-meta text-end">Posted by {{ row['firstname'] }} on {{ row['newsdate'] | news_date}}</div>
     <!-- buttons -->
     <div class="text-end news-meta">
-        <a class="btn btn-lg btn-outline" href="">Update</a>
-        <a class="btn btn-lg btn-outline" href="">Delete</a>
+        <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=row['news_id'], task='update') }}">Update</a>
+        <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=0, task='delete') }}">Delete</a>
     </div>
 </div>
 

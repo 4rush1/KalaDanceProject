@@ -23,7 +23,8 @@ join your first class!
 
 {% block content %}
 <br>
-<div class="container-lg p-3">
+<h3 class="special">Please fill this form</h3>
+<div class="container_round">
     <form action="{{url_for('enrol') }}" method="POST">
         <div class="form-floating">
             <input type="text" class="form-control" id="firstname" name="firstname" placeholder=" " value="{{firstname}}" required>

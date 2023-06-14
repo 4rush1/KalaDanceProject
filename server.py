@@ -37,8 +37,25 @@ def news():
 
 @app.route('/news_cud')
 def news_cud():
-    return render_template("news_cud.html")
+    # Arrive at page from get or post method and collect data from web address
+    data = request.args
+    required_keys = ['id', 'task']
+    for k in required_keys:
+        if k not in data.keys():
+            message = "do not know what to do with create, read, update on news (key not present)"
+            return render_template("error.html", message=message)
+    if request.method == "GET":
+        if data['task'] == 'delete':
+            return "<h1>I want to delete</h1>"
+        elif data['task'] == 'update':
+            return "<h1>I want to update</h1>"
+        elif data['task'] == 'add':
+            return "<h1>I want to add news</h1>"
+        else:
+            message = "Unrecognised task coming from news page"
+            return render_template("error.html", message=message)
 
+    return render_template("news_cud.html")
 
 @app.route('/enrol', methods=["GET", "POST"])
 def enrol():
