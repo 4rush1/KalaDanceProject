@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from db_function import run_search_query_tuples
+from db_function import run_search_query_tuples, run_commit_query
 from datetime import datetime
 
 app = Flask(__name__)
@@ -46,7 +46,14 @@ def news_cud():
             return render_template("error.html", message=message)
     if request.method == "GET":
         if data['task'] == 'delete':
-            return "<h1>I want to delete</h1>"
+            # first query, the ? could be any number, it's an unknown variable
+            sql = "delete from news where news_id = ?"
+            # unknown variable declared in tuple
+            values_tuple = (data['id'],)
+            # tuple is passed into the result
+            result = run_commit_query(sql, values_tuple, db_path)
+            # redirects us back to the news page after deleting
+            return redirect(url_for('news'))
         elif data['task'] == 'update':
             return "<h1>I want to update</h1>"
         elif data['task'] == 'add':
