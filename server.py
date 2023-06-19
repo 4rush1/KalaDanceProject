@@ -35,7 +35,7 @@ def news():
     return render_template("news.html", news=result)
 
 
-@app.route('/news_cud')
+@app.route('/news_cud', methods=["GET", "POST"])
 def news_cud():
     # Arrive at page from get or post method and collect data from web address
     data = request.args
@@ -45,23 +45,24 @@ def news_cud():
             message = "do not know what to do with create, read, update on news (key not present)"
             return render_template("error.html", message=message)
     if request.method == "GET":
+
         if data['task'] == 'delete':
-            # first query, the ? could be any number, it's an unknown variable
             sql = "delete from news where news_id = ?"
-            # unknown variable declared in tuple
             values_tuple = (data['id'],)
-            # tuple is passed into the result
             result = run_commit_query(sql, values_tuple, db_path)
-            # redirects us back to the news page after deleting
+            print("delete")
+            print(result)
             return redirect(url_for('news'))
         elif data['task'] == 'update':
             return "<h1>I want to update</h1>"
         elif data['task'] == 'add':
-            return "<h1>I want to add news</h1>"
+            return render_template("news_cud.html", id=0, task=data['task'])
         else:
             message = "Unrecognised task coming from news page"
             return render_template("error.html", message=message)
 
+    elif request.method == "POST":
+        return "<h1>I want to update</h1>"
     return render_template("news_cud.html")
 
 @app.route('/enrol', methods=["GET", "POST"])
