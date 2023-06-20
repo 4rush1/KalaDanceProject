@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-News
+classes
 {% endblock %}
 
 {% block banner %}
@@ -21,16 +21,16 @@ Register for one of our classes today!
 <!-- news structure -->
 <!-- LOOP -->
 {% for row in classes %}
-<h3 class="container_round">
-    <h2>{{ row['class_name'] }}</h2>
-    <h3>{{ row['class_subtitle'] }}</h3>
+<div class="container_round">
+    <h2>{{ row['class_title'] }}</h2>
+    <div class="subtitle">{{ row['class_subtitle'] }}</div>
     <hr>
-    <h4>{{ row['class_description'] }}</h4>
+    <p class="big-text">{{ row['class_description'] }}</p>
     <!-- buttons -->
-    <div class="text-end news-meta">
-        <a class="btn btn-lg btn-outline" href="{{ url_for('', id=row[''], task='') }}">Register</a>
+    <div class="text-end">
+        <a class="btn btn-lg btn-outline" href="">Register</a>
     </div>
 </div>
-
 {% endfor %}
+
 {% endblock %}

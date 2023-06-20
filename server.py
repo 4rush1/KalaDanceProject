@@ -44,7 +44,6 @@ def news_cud():
         if k not in data.keys():
             message = "do not know what to do with create, read, update on news (key not present)"
             return render_template("error.html", message=message)
-
 # GET
     if request.method == "GET":
         if data['task'] == 'delete':
@@ -121,7 +120,7 @@ def signup():
 
 @app.route('/classes')
 def classes():
-
+    return render_template("classes.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

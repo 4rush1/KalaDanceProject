@@ -9,11 +9,11 @@ static/images/BigBanner.jpg
 {% endblock %}
 
 {% block header %}
-SIGNUP
+SIGN UP
 {% endblock %}
 
 {% block quote %}
-Signup and join our online community
+Sign up and join our online community
 {% endblock %}
 
 {% block source %}
@@ -24,7 +24,7 @@ Signup and join our online community
 <br>
 <h3 class="special">Please fill this form</h3>
 <div class="container_round">
-    <form action="{{url_for('enrol') }}" method="POST">
+    <form action="{{url_for('signup') }}" method="POST">
         <div class="form-floating">
             <input type="text" class="form-control" id="firstname" name="firstname" placeholder=" " value="{{firstname}}" required>
             <label for="firstname" class="form-label">First Name </label>
