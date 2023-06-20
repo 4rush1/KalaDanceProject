@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+News
+{% endblock %}
+
+{% block banner %}
+static/images/BigBanner.jpg
+{% endblock %}
+
+{% block header %}
+CLASSES
+{% endblock %}
+
+{% block quote %}
+Register for one of our classes today!
+{% endblock %}
+
+
+{% block content %}
+<!-- news structure -->
+<!-- LOOP -->
+{% for row in classes %}
+<h3 class="container_round">
+    <h2>{{ row['class_name'] }}</h2>
+    <h3>{{ row['class_subtitle'] }}</h3>
+    <hr>
+    <h4>{{ row['class_description'] }}</h4>
+    <!-- buttons -->
+    <div class="text-end news-meta">
+        <a class="btn btn-lg btn-outline" href="{{ url_for('', id=row[''], task='') }}">Register</a>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

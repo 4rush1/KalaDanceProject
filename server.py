@@ -45,7 +45,7 @@ def news_cud():
             message = "do not know what to do with create, read, update on news (key not present)"
             return render_template("error.html", message=message)
 
-# GET GET GET GET GET GET
+# GET
     if request.method == "GET":
         if data['task'] == 'delete':
             # first query, the ? could be any number, it's an unknown variable
@@ -77,7 +77,7 @@ def news_cud():
         else:
             message = "Unrecognised task coming from news page"
             return render_template("error.html", message=message)
-# POST POST POST POST POST
+# POST
     elif request.method == "POST":
         # collected form info
         f = request.form
@@ -102,12 +102,12 @@ def news_cud():
             return redirect(url_for('news'))
     return render_template("news_cud.html")
 
-@app.route('/enrol', methods=["GET", "POST"])
-def enrol():
+@app.route('/signup', methods=["GET", "POST"])
+def signup():
     if request.method == "POST":
         f = request.form
         print(f)
-        return render_template("confirm.html", enrol_data=f)
+        return render_template("confirm.html", signup_data=f)
 
     elif request.method == "GET":
         temp_form_data={
@@ -117,7 +117,11 @@ def enrol():
             "selgroup" : "",
             "aboutme" : "I am a good dancer",
         }
-        return render_template("enrol.html", **temp_form_data)
+        return render_template("signup.html", **temp_form_data)
+
+@app.route('/classes')
+def classes():
+
 
 if __name__ == "__main__":
     app.run(debug=True)
