@@ -130,58 +130,50 @@ values ((select member_id from member where firstname = 'Usha'),
         (select class_id from classes where class_title = 'Jaipur Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Abhi'),
+values ((select member_id from member where firstname = 'Abhi'),
         (select class_id from classes where class_title = 'Banaras Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Aditya'),
+values ((select member_id from member where firstname = 'Aditya'),
         (select class_id from classes where class_title = 'Jaipur Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Abhi'),
+values ((select member_id from member where firstname = 'Amrita'),
         (select class_id from classes where class_title = 'Banaras Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Amrita'),
-        (select class_id from classes where class_title = 'Banaras Gharana')
-        );
-insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Amrita'),
+values ((select member_id from member where firstname = 'Amrita'),
         (select class_id from classes where class_title = 'Jaipur Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Amrita'),
+values ((select member_id from member where firstname = 'Amrita'),
         (select class_id from classes where class_title = 'Lucknow Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Nandini'),
+values ((select member_id from member where firstname = 'Nandini'),
         (select class_id from classes where class_title = 'Lucknow Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Rahul'),
+values ((select member_id from member where firstname = 'Rahul'),
         (select class_id from classes where class_title = 'Banaras Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Akshara'),
+values ((select member_id from member where firstname = 'Akshara'),
         (select class_id from classes where class_title = 'Banaras Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Anjali'),
+values ((select member_id from member where firstname = 'Anjali'),
         (select class_id from classes where class_title = 'Jaipur Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Tina'),
+values ((select member_id from member where firstname = 'Tina'),
         (select class_id from classes where class_title = 'Jaipur Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Arjun'),
+values ((select member_id from member where firstname = 'Arjun'),
         (select class_id from classes where class_title = 'Lucknow Gharana')
         );
 insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Arjun'),
-        (select class_id from classes where class_title = 'Lucknow Gharana')
-        );
-insert into registration(member_id, class_id)
-values ((select member_id from member where surname = 'Aakriti'),
+values ((select member_id from member where firstname = 'Aakriti'),
         (select class_id from classes where class_title = 'Jaipur Gharana')
         );

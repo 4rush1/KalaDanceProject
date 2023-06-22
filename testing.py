@@ -13,6 +13,33 @@ def get_news(db_path):  # stands for path #
             print(k)
             print(row[k])
 
+
+def get_classes(db_path):
+    # query for the classes page
+    sql = """ select classes.class_id, classes.class_title, classes.class_subtitle, classes.class_description
+    from classes 
+    order by classes.class_title desc;
+    """
+    result = run_search_query_tuples(sql, (), db_path, True)
+    for d in result:
+        print(d['class_title'])
+        print(d['class_subtitle'])
+        print(d['class_description'])
+
+def registration(db_path):
+    sql = """ select m.member_id, m.firstname, m.age_group, c.class_title
+        from member m
+        join registration r on m.member_id = r.member_id
+        join classes c on r.class_id = c.class_id
+        order by m.member_id desc;
+        """
+    result = run_search_query_tuples(sql, (), db_path, True)
+    for d in result:
+        print(d['firstname'] + d['class_title'])
+
+
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'
-    get_news(db_path)
+    # get_news(db_path)
+    # get_classes(db_path)
+    registration(db_path)

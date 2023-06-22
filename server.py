@@ -120,7 +120,31 @@ def signup():
 
 @app.route('/classes')
 def classes():
-    return render_template("classes.html")
+
+    sql = """ select c.class_id, c.class_title, c.class_subtitle, c.class_description
+     from classes c
+     order by c.class_title desc;
+     """
+
+    result = run_search_query_tuples(sql, (), db_path, True)
+    print(result)
+
+    return render_template("classes.html", classes=result)
+
+@app.route('/registrations')
+def registrations():
+    data = request.args
+    sql = """ select m.member_id, m.firstname, m.age_group, c.class_title
+            from member m
+            join registration r on m.member_id = r.member_id
+            join classes c on r.class_id = c.class_id
+            where c.class_id = ?
+            order by m.age_group desc;
+            """
+    values_tuple=(data['class_id'],)
+    result = run_search_query_tuples(sql, values_tuple, db_path, True)
+    return render_template("register.html", register=result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

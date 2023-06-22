@@ -9,9 +9,18 @@ static/images/BigBanner.jpg
 {% endblock %}
 
 {% block header %}
-REGISTER
+REGISTRATIONS
 {% endblock %}
 
 {% block content %}
+    {%  for row in register %}
+        <div class="small_container_round">
+            <p class="class-text">{{ row['firstname'] }} : {{ row['age_group'] }}<p class="big-text">
+            <div class="text-end news-meta">
+            <a class="btn btn-lg btn-outline" href="">Remove</a>
+            </div>
+        </div>
+    {% endfor %}
+
 
 {% endblock %}

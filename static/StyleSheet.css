@@ -208,6 +208,16 @@ li{
     margin-right: 2em;
     border-radius: 40px;
  }
+.small_container_round{
+    border: 0px solid blue;
+    background-color: var(--almond);
+    padding: 2em 2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 40px;
+ }
 
 /* IMAGES */
 .part-img{
@@ -287,6 +297,14 @@ td:first-child{
     margin: 0;
     color: var(--maroon);
     padding-bottom: 0.5em;
+}
+
+.class-text{
+    font-size: 1.3em;
+    text-align: left;
+    font-weight: 500;
+    margin: 0;
+    color: var(--maroon);
 }
 
 .news-meta{
