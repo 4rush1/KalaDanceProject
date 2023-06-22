@@ -134,7 +134,7 @@ def classes():
 @app.route('/registrations')
 def registrations():
     data = request.args
-    sql = """ select m.member_id, m.firstname, m.age_group, c.class_title
+    sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
             from member m
             join registration r on m.member_id = r.member_id
             join classes c on r.class_id = c.class_id
@@ -143,8 +143,21 @@ def registrations():
             """
     values_tuple=(data['class_id'],)
     result = run_search_query_tuples(sql, values_tuple, db_path, True)
-    return render_template("register.html", register=result)
+    if request.method == "POST":
+        # collected form info
+        f = request.form
+        print(f)
+        if data['task'] == 'add' and data['member_id'] in data['registration']:
+            # add the new member to the class
+            sql = """insert into registration(member_id, class_id)
+                           values(?,?)"""
+            # tuple values
+            result = run_commit_query(sql, values_tuple, db_path)
+            return redirect(url_for('registration'))
+        else:
+            print("this person is already in the {} class")
 
+    return render_template("register.html", register=result)
 
 if __name__ == "__main__":
     app.run(debug=True)

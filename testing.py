@@ -37,6 +37,18 @@ def registration(db_path):
     for d in result:
         print(d['firstname'] + d['class_title'])
 
+    if request.method == "POST":
+        # collected form info
+        f = request.form
+        print(f)
+        if data['task'] == 'add':
+            # add the new member to the class
+            sql = """insert into registration(member_id, class_id)
+                           values(?,?)"""
+            # tuple values
+            result = run_commit_query(sql, values_tuple, db_path)
+            return redirect(url_for('registrations'))
+
 
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'
