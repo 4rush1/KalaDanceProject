@@ -37,6 +37,18 @@ def registration(db_path):
     for d in result:
         print(d['firstname'] + d['class_title'])
 
+def add_member(db_path):
+        sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
+                    from member m
+                    join registration r on m.member_id = r.member_id
+                    join classes c on r.class_id = c.class_id
+                    where c.class_id = ?
+                    order by m.age_group desc;
+                    """
+        values_tuple = (data['class_id'],)
+        result = run_search_query_tuples(sql, values_tuple, db_path, True)
+        return render_template("add_member.html", add_member=result)
+
     if request.method == "POST":
         # collected form info
         f = request.form

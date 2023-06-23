@@ -175,5 +175,5 @@ values ((select member_id from member where firstname = 'Arjun'),
         );
 insert into registration(member_id, class_id)
 values ((select member_id from member where firstname = 'Aakriti'),
-        (select class_id from classes where class_title = 'Jaipur Gharana')
+        (select class_id from classes where class_title = 'Lucknow Gharana')
         );

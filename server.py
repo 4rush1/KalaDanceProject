@@ -131,9 +131,16 @@ def classes():
 
     return render_template("classes.html", classes=result)
 
-@app.route('/registrations')
-def registrations():
+@app.route('/registration', methods=["GET", "POST"])
+def registration():
     data = request.args
+
+    required_keys = ['class_id']
+    for k in required_keys:
+        if k not in data.keys():
+            message = data.keys()
+            return render_template("error.html", message=message)
+
     sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
             from member m
             join registration r on m.member_id = r.member_id
@@ -143,21 +150,26 @@ def registrations():
             """
     values_tuple=(data['class_id'],)
     result = run_search_query_tuples(sql, values_tuple, db_path, True)
-    if request.method == "POST":
-        # collected form info
-        f = request.form
-        print(f)
-        if data['task'] == 'add' and data['member_id'] in data['registration']:
-            # add the new member to the class
-            sql = """insert into registration(member_id, class_id)
-                           values(?,?)"""
-            # tuple values
-            result = run_commit_query(sql, values_tuple, db_path)
-            return redirect(url_for('registration'))
-        else:
-            print("this person is already in the {} class")
 
-    return render_template("register.html", register=result)
+    if request.method == "GET":
+        if 'task' in data.keys():
+            if data['task'] == 'delete':
+                # query to delete this person from the registration table, the ? could be any number, it's an unknown variable
+                sql = "delete from registration where member_id = ? and class_id = ?"
+                values_tuple = (data['member_id'], data['class_id'])
+                result = run_commit_query(sql, values_tuple, db_path)
+                print("delete")
+                print(result)
+                # redirects us back to the news page after deleting
+                return redirect(url_for('registration', class_id=data['class_id']))
+        else:
+            return render_template("registration.html", register=result, class_id=data['class_id'])
+
+
+@app.route('/add_member')
+def add_member():
+    return render_template("add_member.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
