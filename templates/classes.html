@@ -26,6 +26,7 @@ Register for one of our classes today!
     <div class="subtitle">{{ row['class_subtitle'] }}</div>
     <hr>
     <p class="big-text">{{ row['class_description'] }}</p>
+    <p class="meta">{{ row['class_time'] }}</p>
     <!-- buttons -->
     <div class="text-end">
         <a class="btn btn-lg btn-outline" href="{{ url_for('registration', class_id=row['class_id'])  }}">Register</a>

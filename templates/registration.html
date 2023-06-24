@@ -13,15 +13,29 @@ REGISTRATIONS
 {% endblock %}
 
 {% block quote %}
-    <h3 class="text-centre special_text"> {%  for row in register %}{{ row['class_title'] }}{% endfor %} </h3>
+    <h3
+    class="text-centre special_text">
+    {%  for row in register %}
+    {{ row['class_title'] }}
+    {% endfor %}
+    </h3>
 {% endblock %}
 
 {% block content %}
-        <div class="container_round">
+    <div class="small_container_round">
+        <form action="{{url_for('registration') }}" method="POST">
+            <label for="selgroup" class="form-label">Which Student/Teacher do you want to add</label>
+            <select class="form-select" id="selgroup" name="selgrouplist" required>
+                <option value="">-- Select --</option>
+                {%  for row in member %}
+                    <option value="member">{{ row['age_group'] }}: {{ row['firstname'] }} {{ row['surname'] }}</option>
+                {% endfor %}
+            </select>
             <div class="text-end">
-                <a class="btn btn-lg btn-outline" href="{{ url_for('add_member', task='add') }}">Add member</a>
+                <button type="submit" class="btn btn-lg btn-outline">Add member</button>
             </div>
-        </div>
+        </form>
+    </div>
     {%  for row in register %}
         <div class="small_container_round">
             <table>

@@ -62,6 +62,19 @@ def add_member(db_path):
             return redirect(url_for('registrations'))
 
 
+        elif request.method == "POST":
+            required_keys = ['member_id']
+            # collected form info
+            f = request.form
+            print(f)
+            if data['task'] == 'add':
+                sql = """insert into registration(member_id, class_id)
+                                values(?,?)"""
+                # tuple values
+                values_tuple = (f['firstname'], f['surname'], f['age_group'])
+                result = run_commit_query(sql, values_tuple, db_path)
+                return redirect(url_for('registration', member_id=data['member_id']))
+
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'
     # get_news(db_path)

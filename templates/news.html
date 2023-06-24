@@ -36,7 +36,7 @@ news and events!
     <p class="big-text">{{ row['content'] }}</p>
     <div class="news-meta text-end">Posted by {{ row['firstname'] }} on {{ row['newsdate'] | news_date}}</div>
     <!-- buttons -->
-    <div class="text-end news-meta">
+    <div class="text-end meta">
         <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=row['news_id'], task='update') }}">Update</a>
         <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=row['news_id'], task='delete') }}">Delete</a>
     </div>

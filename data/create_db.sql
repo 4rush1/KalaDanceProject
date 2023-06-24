@@ -30,7 +30,8 @@ create table classes(
     class_id integer primary key autoincrement,
     class_title text not null,
     class_subtitle text not null,
-    class_description text not null
+    class_description text not null,
+    class_time text not null
 );
 
 create table registration(
@@ -97,29 +98,34 @@ values( 'Class cancelled',
        );
 
 /* CREATING CLASSES */
-insert into classes(class_title, class_subtitle, class_description)
+insert into classes(class_title, class_subtitle, class_description, class_time)
 values( 'Lucknow Gharana',
        'If you like acting & graceful movements, this class is for you!',
        'The Lucknow Gharana was partly developed in Indian Kingdoms as a form of entertainment. ' ||
        'Therefore it largely  focuses on storytelling, acting and emotions (known as bhaav). ' ||
-       'Along with this, the hand movements are often very graceful and the footwork is complex '
+       'Along with this, the hand movements are often very graceful and the footwork is complex ',
+       'Junior Students: every Monday 3:30-4:30 pm' ||
+       'Senior Students: every Monday 4:30-5:30 pm'
        );
 
-insert into classes(class_title, class_subtitle, class_description)
+insert into classes(class_title, class_subtitle, class_description, class_time)
 values( 'Jaipur Gharana',
        'Want to learn more powerful moves? Then learn the Jaipur Gharana!',
        'This dance form developed under the sponsorship of Rajput Warriors in ancient India,' ||
-       ' therefore, it contains lots of fast spins, complex footwork, warrior-style movements and even devotional motifs.'
+       ' therefore, it contains lots of fast spins, complex footwork, warrior-style movements and even devotional motifs.',
+       'Junior Students: every Wednesday 3:30-4:30 pm' ||
+       'Senior Students: every Wednesday 4:30-5:30 pm'
        );
 
-insert into classes(class_title, class_subtitle, class_description)
+insert into classes(class_title, class_subtitle, class_description, class_time)
 values( 'Banaras Gharana',
        'This Gharana teaches many skills, from dancing on plates, to spinning on your knees.',
        'The Banaras Gharana is both graceful and powerful. If you learn this gharana, you will certainly' ||
        ' have great balance skills, due to the unique and complex moves: such as spinning in both directions,' ||
-       ' balancing/dancing on metal plates, spinning on your knees and a lot more jumping! '
+       ' balancing/dancing on metal plates, spinning on your knees and a lot more jumping! ',
+       'Junior Students: every Friday 3:30-4:30 pm' ||
+       'Senior Students: every Friday 4:30-5:30 pm'
        );
-
 
 insert into registration(member_id, class_id)
 values ((select member_id from member where firstname = 'Usha'),

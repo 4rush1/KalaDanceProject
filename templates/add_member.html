@@ -14,22 +14,18 @@ ADD MEMBER
 
 {% block content %}
 <div class="container_round">
-    <div class="text-end">
-        <form action="{{url_for('add_member') }}" method="POST">
-         <label for="selgroup" class="form-label">Which Student/Teacher do you want to add</label>
-            <select class="form-select" id="selgroup" name="selgrouplist" required>
-                <option value="">-- Select --</option>
-                {%  for row in register %}
+    <form action="{{url_for('add_member') }}" method="POST">
+        <label for="selgroup" class="form-label">Which Student/Teacher do you want to add</label>
+        <select class="form-select" id="selgroup" name="selgrouplist" required>
+            <option value="">-- Select --</option>
+            {%  for row in member %}
                 <option value="member">{{ row['age_group'] }}: {{ row['firstname'] }} {{ row['surname'] }}</option>
-                {% endfor %}
-            </select>
-            <div class="text-end">
-                <button type="submit" class="btn btn-lg btn-outline">Submit</button>
-            </div>
-        </form>
-    </div>
+            {% endfor %}
+        </select>
+        <div class="text-end">
+            <button type="submit" class="btn btn-lg btn-outline">Submit</button>
+        </div>
+    </form>
 </div>
-
-
 {% endblock %}
 
