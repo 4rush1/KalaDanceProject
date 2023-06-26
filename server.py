@@ -135,6 +135,8 @@ def classes():
 def registration():
     data = request.args
 
+    # ----
+
     sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
             from member m
             join registration r on m.member_id = r.member_id
@@ -145,45 +147,31 @@ def registration():
     values_tuple=(data['class_id'],)
     result = run_search_query_tuples(sql, values_tuple, db_path, True)
 
-    if request.method == "GET":
-        required_keys = ['class_id']
-        for k in required_keys:
-            if k not in data.keys():
-                message = data.keys()
-                return render_template("error.html", message=message)
-        if 'task' in data.keys():
-            if data['task'] == 'delete':
-                # query to delete this person from the registration table, the ? could be any number, it's an unknown variable
-                sql = "delete from registration where member_id = ? and class_id = ?"
-                values_tuple = (data['member_id'], data['class_id'])
-                result = run_commit_query(sql, values_tuple, db_path)
-                print("delete")
-                print(result)
-                # redirects us back to the news page after deleting
-                return redirect(url_for('registration', class_id=data['class_id']))
-        else:
-            return render_template("registration.html", register=result, class_id=data['class_id'])
+    sql = """select m.member_id, m.firstname, m.surname
+            from member m"""
+    member_list = run_search_query_tuples(sql, (), db_path, True)
+
+    if 'task' in data.keys():
+        if data['task'] == 'delete':
+            # query to delete this person from the registration table, the ? could be any number, it's an unknown variable
+            sql = "delete from registration where member_id = ? and class_id = ?"
+            values_tuple = (data['member_id'], data['class_id'])
+            result = run_commit_query(sql, values_tuple, db_path)
+            print("delete")
+            print(result)
+            # redirects us back to the news page after deleting
+            return redirect(url_for('registration', class_id=data['class_id']))
 
     elif request.method == "POST":
-        required_keys = ['member_id']
-        for k in required_keys:
-            if k not in data.keys():
-                message = data.keys()
-                return render_template("error.html", message=message)
         f = request.form
         print(f)
-        if 'task' in data.keys():
-            if data['task'] == 'add':
-                sql = """insert into registration(member_id, class_id)
-                                values(?,?)"""
-                # tuple values
-                values_tuple = (f['firstname'], f['surname'], f['age_group'])
-                result = run_commit_query(sql, values_tuple, db_path)
-                return redirect(url_for('registration', member_id=data['member_id']))
-        else:
-            return render_template("registration.html", register=result, class_id=data['class_id'])
+        sql = """insert into registration(member_id, class_id)
+                        values(?,?)"""
+        return "<h1> Posting to add member to class </h1>"
+        #return redirect(url_for('registration', class_id=data['class_id']))
 
-
+    else:
+        return render_template("registration.html", register=result, class_id=data['class_id'], members=member_list)
 
 
 if __name__ == "__main__":

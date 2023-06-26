@@ -23,12 +23,12 @@ Register for one of our classes today!
 {% for row in classes %}
 <div class="container_round">
     <h2>{{ row['class_title'] }}</h2>
-    <div class="subtitle">{{ row['class_subtitle'] }}</div>
+    <h3>{{ row['class_subtitle'] }}</h3>
     <hr>
     <p class="big-text">{{ row['class_description'] }}</p>
-    <p class="meta">{{ row['class_time'] }}</p>
     <!-- buttons -->
     <div class="text-end">
+        <p class="meta">{{ row['class_time'] }}</p>
         <a class="btn btn-lg btn-outline" href="{{ url_for('registration', class_id=row['class_id'])  }}">Register</a>
     </div>
 </div>
