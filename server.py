@@ -1,3 +1,4 @@
+# IMPORTING
 from flask import Flask, render_template, request, redirect, url_for
 from db_function import run_search_query_tuples, run_commit_query
 from datetime import datetime
@@ -5,6 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 db_path = 'data/dance_db.sqlite'
 
+# FILTER TEMPLATE
 #format of date, year, month, day, hour, minute, second
 #string format time
 @app.template_filter()
@@ -12,19 +14,20 @@ def news_date(sqlite_dt):
     x = datetime.strptime(sqlite_dt, '%Y-%m-%d %H:%M:%S')
     return x.strftime('%a-%d-%b %y %I:%M %p')
 
-@app.route('/')
+# HOMEPAGE
+@app.route('/',  methods=["GET", "POST"])
 def index():
     return render_template("index.html")
 
-
+# INITIAL INFO PAGE
 @app.route('/initialinfo')
 def BeginnerInfo():
     return render_template("initial_info.html")
 
-
+# NEWS PAGE
 @app.route('/news')
 def news():
-    # query for the news page
+    # QUERY FOR NEWS TO APPEAR ON THE PAGE
     sql = """ select news.news_id, news.title, news.subtitle, news.content, news.newsdate, member.firstname 
     from news 
     join member on news.member_id = member.member_id
@@ -34,7 +37,7 @@ def news():
     print(result)
     return render_template("news.html", news=result)
 
-
+# NEWS CREATE, UPDATE READ PAGE
 @app.route('/news_cud', methods=["GET", "POST"])
 def news_cud():
     # Arrive at page from get or post method and collect data from web address
@@ -44,7 +47,7 @@ def news_cud():
         if k not in data.keys():
             message = "do not know what to do with create, read, update on news (key not present)"
             return render_template("error.html", message=message)
-# GET
+# GET : TO GET INFO FROM FORM
     if request.method == "GET":
         if data['task'] == 'delete':
             # first query, the ? could be any number, it's an unknown variable
@@ -76,7 +79,7 @@ def news_cud():
         else:
             message = "Unrecognised task coming from news page"
             return render_template("error.html", message=message)
-# POST
+# POST : TO POST INFO FROM FORM
     elif request.method == "POST":
         # collected form info
         f = request.form
@@ -101,26 +104,28 @@ def news_cud():
             return redirect(url_for('news'))
     return render_template("news_cud.html")
 
+# SIGNUP PAGE
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
-    if request.method == "POST":
+# GET: TO GET INFO FROM FORM
+    if request.method == "GET":
+        return render_template('signup.html', email='john21@yahoo.com', password='temp')
+# POST : TO POST INFO FROM FORM
+    elif request.method == "POST":
         f = request.form
         print(f)
-        return render_template("confirm.html", signup_data=f)
+        # QUERY FOR
+        sql= """ select firstname, surname, age_group, password, authorisation from member where email=? """
+        values_tuple=(f['email'],)
+        result = run_search_query_tuples(sql, values_tuple, db_path, True)
+        print(result)
+        return "<h1> posting from signup form </h1>"
 
-    elif request.method == "GET":
-        temp_form_data={
-            "firstname" : "Janet",
-            "surname" : "Jackson",
-            "email" : "jj@gmail.com",
-            "selgroup" : "",
-            "aboutme" : "I am a good dancer",
-        }
-        return render_template("signup.html", **temp_form_data)
 
+# CLASSES PAGE
 @app.route('/classes')
 def classes():
-
+    # QUERY TO DISPLAY CLASSES ON PAGE
     sql = """ select c.class_id, c.class_title, c.class_subtitle, c.class_description
      from classes c
      order by c.class_title desc;
@@ -131,48 +136,51 @@ def classes():
 
     return render_template("classes.html", classes=result)
 
+# REGISTRATION PAGE
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
-    data = request.args
-
-    # ----
-
-    sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
-            from member m
-            join registration r on m.member_id = r.member_id
-            join classes c on r.class_id = c.class_id
-            where c.class_id = ?
-            order by m.age_group desc;
-            """
-    values_tuple=(data['class_id'],)
-    result = run_search_query_tuples(sql, values_tuple, db_path, True)
-
-    sql = """select m.member_id, m.firstname, m.surname
-            from member m"""
-    member_list = run_search_query_tuples(sql, (), db_path, True)
-
-    if 'task' in data.keys():
-        if data['task'] == 'delete':
-            # query to delete this person from the registration table, the ? could be any number, it's an unknown variable
-            sql = "delete from registration where member_id = ? and class_id = ?"
-            values_tuple = (data['member_id'], data['class_id'])
-            result = run_commit_query(sql, values_tuple, db_path)
-            print("delete")
-            print(result)
-            # redirects us back to the news page after deleting
-            return redirect(url_for('registration', class_id=data['class_id']))
-
+    # QUERY TO DIPLAY STUDENTS IN EACH CLASS
+    if request.method == "GET":
+        data = request.args
+        sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
+                from member m
+                join registration r on m.member_id = r.member_id
+                join classes c on r.class_id = c.class_id
+                where c.class_id = ?
+                order by m.age_group desc;
+                """
+        values_tuple=(data['class_id'],)
+        result = run_search_query_tuples(sql, values_tuple, db_path, True)
+        # QUERY TO SELECT / ESTABLISH ITEMS FROM THE MEMBERS TABLE IN THE SELECT BUTTON
+        sql = """select m.member_id, m.firstname, m.surname
+                from member m"""
+        member_list = run_search_query_tuples(sql, (), db_path, True)
+        if 'task' in data.keys():
+            if data['task'] == 'delete':
+                # QUERY TO DELETE PERSION FROM THE CLASS
+                # the ? could be any number, it's an unknown variable
+                sql = "delete from registration where member_id = ? and class_id = ?"
+                values_tuple = (data['member_id'], data['class_id'])
+                result = run_commit_query(sql, values_tuple, db_path)
+                print("delete")
+                print(result)
+                # redirects us back to the news page after deleting
+                return redirect(url_for('registration', class_id=data['class_id']))
+        else:
+            return render_template("registration.html", register=result, class_id=data['class_id'], members=member_list)
+# POST: POST INFO FROM THE SELECT MEMBERS FORM
     elif request.method == "POST":
         f = request.form
         print(f)
+        data = request.args
+        print(data)
+        # QUERY TO ADD PEOPLE TO THE CLASS
         sql = """insert into registration(member_id, class_id)
                         values(?,?)"""
-        return "<h1> Posting to add member to class </h1>"
-        #return redirect(url_for('registration', class_id=data['class_id']))
-
-    else:
-        return render_template("registration.html", register=result, class_id=data['class_id'], members=member_list)
+        values_tuple = (f['name_list'], data['class_id'])
+        result = run_commit_query(sql,values_tuple,db_path)
+        return redirect(url_for('registration', class_id=data['class_id']))
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=8000,debug=True)

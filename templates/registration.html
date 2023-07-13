@@ -22,10 +22,10 @@ REGISTRATIONS
 {% endblock %}
 {% block content %}
     <div class="small_container_round">
-        <form action="{{url_for('registration') }}" method="POST">
-            <label for="selgroup" class="form-label"><h4>Which Student/Teacher do you want to add</h4></label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Open this select menu</option>
+        <form action="{{url_for('registration', class_id=class_id) }}" method="POST">
+            <label for="name_list" class="form-label"><h4>Which Student/Teacher do you want to add</h4></label>
+                <select class="form-select" name="name_list" id="name_list"  required>
+                  <option value="">Open this select menu</option>
                     {% for row in members %}
                   <option value="{{ row['member_id'] }}">{{ row['firstname'] }} {{ row['surname'] }}</option>
                     {% endfor %}

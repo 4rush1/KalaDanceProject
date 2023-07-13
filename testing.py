@@ -75,6 +75,26 @@ def add_member(db_path):
                 result = run_commit_query(sql, values_tuple, db_path)
                 return redirect(url_for('registration', member_id=data['member_id']))
 
+def signup(db_path):
+    def signup():
+        # POST : TO POST INFO FROM FORM
+        if request.method == "POST":
+            f = request.form
+            print(f)
+            return render_template("confirm.html", signup_data=f)
+
+        # GET: TO GET INFO FROM FORM
+        elif request.method == "GET":
+            # TEMPORARY DATA / INFO
+            temp_form_data = {
+                "firstname": "Janet",
+                "surname": "Jackson",
+                "email": "jj@gmail.com",
+                "selgroup": "",
+                "aboutme": "I am a good dancer",
+            }
+            return render_template("signup.html", **temp_form_data)
+
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'
     # get_news(db_path)

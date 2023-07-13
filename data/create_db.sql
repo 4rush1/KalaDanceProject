@@ -112,7 +112,7 @@ insert into classes(class_title, class_subtitle, class_description, class_time)
 values( 'Jaipur Gharana',
        'Want to learn more powerful moves? Then learn the Jaipur Gharana!',
        'This dance form developed under the sponsorship of Rajput Warriors in ancient India,' ||
-       ' therefore, it contains lots of fast spins, complex footwork, warrior-style movements and even devotional motifs.',
+       ' therefore, it contains lots of fast spins, complex footwork and even warrior-style movements',
        'Junior Students: every Wednesday 3:30-4:30 pm' ||
        'Senior Students: every Wednesday 4:30-5:30 pm'
        );
