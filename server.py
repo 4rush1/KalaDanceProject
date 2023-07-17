@@ -107,20 +107,22 @@ def news_cud():
 # SIGNUP PAGE
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
-# GET: TO GET INFO FROM FORM
+    # GET: TO GET INFO FROM FORM
     if request.method == "GET":
         return render_template('signup.html', email='john21@yahoo.com', password='temp')
-# POST : TO POST INFO FROM FORM
+    # POST : TO POST INFO FROM FORM
     elif request.method == "POST":
         f = request.form
         print(f)
-        # QUERY FOR
-        sql= """ select firstname, surname, age_group, password, authorisation from member where email=? """
-        values_tuple=(f['email'],)
+        # QUERY TO SELECT VALUES
+        sql = """ select firstname, password, authorisation from member where email=? """
+        values_tuple = (f['email'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)
         print(result)
+        print(result['firstname'])
+        print(result['password'])
+        print(result['authorisation'])
         return "<h1> posting from signup form </h1>"
-
 
 # CLASSES PAGE
 @app.route('/classes')
@@ -139,7 +141,7 @@ def classes():
 # REGISTRATION PAGE
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
-    # QUERY TO DIPLAY STUDENTS IN EACH CLASS
+    # QUERY TO DISPLAY STUDENTS IN EACH CLASS
     if request.method == "GET":
         data = request.args
         sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title

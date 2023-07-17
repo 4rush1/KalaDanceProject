@@ -76,7 +76,6 @@ def add_member(db_path):
                 return redirect(url_for('registration', member_id=data['member_id']))
 
 def signup(db_path):
-    def signup():
         # POST : TO POST INFO FROM FORM
         if request.method == "POST":
             f = request.form
@@ -92,8 +91,10 @@ def signup(db_path):
                 "email": "jj@gmail.com",
                 "selgroup": "",
                 "aboutme": "I am a good dancer",
+                "password": "temp",
             }
             return render_template("signup.html", **temp_form_data)
+
 
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'
