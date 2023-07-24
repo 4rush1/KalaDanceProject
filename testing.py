@@ -95,6 +95,22 @@ def signup(db_path):
             }
             return render_template("signup.html", **temp_form_data)
 
+        # QUERY TO LOGIN USER
+        sql = """ select firstname, surname, email, age_group, about_me, password, authorisation from member where email=? """
+        values_tuple = (f['email'],)
+        result = run_search_query_tuples(sql, values_tuple, db_path, True)
+        if result:
+            result=result[0]
+            print(result)
+            print(result['firstname'])
+            print(result['surname'])
+            print(result['email'])
+            print(result['age_group'])
+            print(result['authorisation'])
+        else:
+            error = "your credentials are not recognised"
+            return render_template('signup.html', firstname="Arushi", surname="Jackson", email="aruj@gmail.com",
+                                   aboutme="temp about me", password="temp")
 
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'

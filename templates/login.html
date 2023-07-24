@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block banner %}
+static/images/BigBanner.jpg
+{% endblock %}
+
+{% block header %}
+LOG IN
+{% endblock %}
+
+{% block quote %}
+Already have an account? Log in here!
+{% endblock %}
+
+{% block source %}
+
+{% endblock %}
+
+{% block content %}
+<br>
+<h3 class="special">Please enter your details</h3>
+<div class="container_round">
+    <form action="{{url_for('login') }}" method="POST">
+        <div class="form-floating">
+            <input type="email" class="form-control" id="email" name="email" placeholder=" " value="{{email}}" required>
+            <label for="email" class="form-label">Email Address </label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" name="password" placeholder=" " value="{{password}}" required>
+            <label for="password" class="form-label">Password: </label>
+        </div>
+        <br>
+        <div class="text-end">
+            <button type="reset" class="btn btn-lg btn-outline">Reset</button>
+            <button type="submit" class="btn btn-lg btn-outline">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

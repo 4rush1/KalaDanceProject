@@ -119,7 +119,23 @@ def signup():
         values(?,?,?,?,?,?,1) """
         values_tuple = (f['firstname'], f['surname'], f['email'], f['selgrouplist'], f['aboutme'], f['password'])
         result = run_commit_query(sql, values_tuple, db_path)
-        return "<h1> posting from signup form </h1>"
+
+# LOGIN PAGE
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    # GET: TO GET INFO FROM FORM
+    if request.method == "GET":
+        return render_template('login.html', email = "aruj@gmail.com", password = "temp")
+    # POST : TO POST INFO FROM FORM
+    elif request.method == "POST":
+        f = request.form
+        print(f)
+        # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE
+        sql = """ select firstname, email, age_group, about_me, password, authorisation from member where email = ? """
+        values_tuple = (f['email'],)
+        result = run_search_query_tuples(sql, values_tuple, db_path, True)
+        print(result)
+        return "<h1> Posting from Login form </h1>"
 
 # CLASSES PAGE
 @app.route('/classes')
