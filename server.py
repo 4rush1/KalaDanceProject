@@ -109,19 +109,16 @@ def news_cud():
 def signup():
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":
-        return render_template('signup.html', email='john21@yahoo.com', password='temp')
+        return render_template('signup.html', firstname = "Arushi", surname = "Jackson", email = "aruj@gmail.com", aboutme = "temp about me", password = "temp")
     # POST : TO POST INFO FROM FORM
     elif request.method == "POST":
         f = request.form
         print(f)
-        # QUERY TO SELECT VALUES
-        sql = """ select firstname, password, authorisation from member where email=? """
-        values_tuple = (f['email'],)
-        result = run_search_query_tuples(sql, values_tuple, db_path, True)
-        print(result)
-        print(result['firstname'])
-        print(result['password'])
-        print(result['authorisation'])
+        # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE
+        sql = """ insert into member(firstname, surname, email, age_group, about_me, password, authorisation)
+        values(?,?,?,?,?,?,1) """
+        values_tuple = (f['firstname'], f['surname'], f['email'], f['selgrouplist'], f['aboutme'], f['password'])
+        result = run_commit_query(sql, values_tuple, db_path)
         return "<h1> posting from signup form </h1>"
 
 # CLASSES PAGE
@@ -159,7 +156,7 @@ def registration():
         member_list = run_search_query_tuples(sql, (), db_path, True)
         if 'task' in data.keys():
             if data['task'] == 'delete':
-                # QUERY TO DELETE PERSION FROM THE CLASS
+                # QUERY TO DELETE PERSON FROM THE CLASS
                 # the ? could be any number, it's an unknown variable
                 sql = "delete from registration where member_id = ? and class_id = ?"
                 values_tuple = (data['member_id'], data['class_id'])
