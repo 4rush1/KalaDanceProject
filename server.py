@@ -123,9 +123,10 @@ def signup():
 # LOGIN PAGE
 @app.route('/login', methods=["GET", "POST"])
 def login():
+    error = "Credentials not recognised"
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":
-        return render_template('login.html', email = "aruj@gmail.com", password = "temp")
+        return render_template('login.html', email = "ab@gmail.com", password = "temp")
     # POST : TO POST INFO FROM FORM
     elif request.method == "POST":
         f = request.form
@@ -134,8 +135,18 @@ def login():
         sql = """ select firstname, email, age_group, about_me, password, authorisation from member where email = ? """
         values_tuple = (f['email'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)
-        print(result)
-        return "<h1> Posting from Login form </h1>"
+        # if the query delivers a result
+        if result:
+            # to get object out of the zero index, get the first result
+            result = result[0]
+            # checking if the password matches
+            if result['password'] == f['password']:
+                print("log in successful")
+                return redirect(url_for('index'))
+            else:
+                return render_template('login.html', email="ab@gmail.com", password="temp", error=error)
+        else:
+            return render_template('login.html', email="ab@gmail.com", password="temp", error=error)
 
 # CLASSES PAGE
 @app.route('/classes')

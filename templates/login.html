@@ -23,6 +23,7 @@ Already have an account? Log in here!
 {% block content %}
 <br>
 <h3 class="special">Please enter your details</h3>
+    <div class="alert" > {{ error }}</div>
 <div class="container_round">
     <form action="{{url_for('login') }}" method="POST">
         <div class="form-floating">
