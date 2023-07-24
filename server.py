@@ -1,9 +1,10 @@
 # IMPORTING
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from db_function import run_search_query_tuples, run_commit_query
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = "awedrtgyhjukngfg"
 db_path = 'data/dance_db.sqlite'
 
 # FILTER TEMPLATE
@@ -123,6 +124,7 @@ def signup():
 # LOGIN PAGE
 @app.route('/login', methods=["GET", "POST"])
 def login():
+    print(session)
     error = "Credentials not recognised"
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":
@@ -141,7 +143,10 @@ def login():
             result = result[0]
             # checking if the password matches
             if result['password'] == f['password']:
-                print("log in successful")
+                # start a session --> give the session some values
+                session['firstname'] = result['firstname']
+                session['authorisation'] = result['authorisation']
+                print(session)
                 return redirect(url_for('index'))
             else:
                 return render_template('login.html', email="ab@gmail.com", password="temp", error=error)

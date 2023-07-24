@@ -22,9 +22,7 @@
 
 <!-- NAVIGATION -->
 <div class="container-fluid">
-
     <nav class="navbar navbar-expand-lg navbar-dark px-3 py-3.5 fixed-top">
-
     <!-- Adding hamburger button -->
     <button class="navbar-toggler ms-auto btn-outline" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -60,9 +58,13 @@
         <div class="header-quote">{% block quote %}{% endblock %}</div>
         <div class="header-quote">{% block source %}{% endblock %}</div>
     </div>
-
 </div>
 
+<div class="container-lg">
+    {% if session %}
+        <div class="session"> {{session['firstname']}} is logged in and their authorisation is {{session['authorisation']}}</div>
+    {% endif %}
+</div>
 
 {% block content %}
 {% endblock %}
