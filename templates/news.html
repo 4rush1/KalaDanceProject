@@ -22,7 +22,11 @@ news and events!
 <!-- to enter news -->
 <div class="container_round">
     <div class="text-end">
+        {%  if session and session['authorisation'] == 0 %}
         <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=0, task='add') }}">Add News</a>
+        {%  else %}
+        <a class="btn btn-lg btn-outline btn-secondary disabled" href="{{ url_for('news_cud', id=0, task='add') }}">Add News</a>
+        {%  endif %}
     </div>
 </div>
 
@@ -37,8 +41,16 @@ news and events!
     <div class="meta text-end">Posted by {{ row['firstname'] }} on {{ row['newsdate'] | news_date}}</div>
     <!-- buttons -->
     <div class="text-end meta">
+    <!-- if in session, allow user to update or delete -->
+        {%  if session and session['authorisation'] == 0 %}
         <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=row['news_id'], task='update') }}">Update</a>
         <a class="btn btn-lg btn-outline" href="{{ url_for('news_cud', id=row['news_id'], task='delete') }}">Delete</a>
+    <!-- if not in session or logged out, they cannot update or delete news, therefore buttons disabled -->
+        {%  else %}
+        <a class="btn btn-lg btn-outline btn-secondary disabled" href="{{ url_for('news_cud', id=row['news_id'], task='update') }}">Update</a>
+        <a class="btn btn-lg btn-outline btn-secondary disabled" href="{{ url_for('news_cud', id=row['news_id'], task='delete') }}">Delete</a>
+        {%  endif %}
+
     </div>
 </div>
 
