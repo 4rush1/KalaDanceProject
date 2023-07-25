@@ -153,6 +153,12 @@ def login():
         else:
             return render_template('login.html', email="ab@gmail.com", password="temp", error=error)
 
+@app.route('/logout')
+def logout():
+    # resets all the keys in the session
+    session.clear()
+    return redirect(url_for('index'))
+
 # CLASSES PAGE
 @app.route('/classes')
 def classes():

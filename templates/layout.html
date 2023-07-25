@@ -43,8 +43,14 @@
             </li>
         </ul>
         <div class="ms-auto nav-item">
+            <!-- if someone is logged in -->
+            {%  if session %}
+            <a class="nav-link btn btn-outline" href="/logout">Log out</a>
+            <!-- if no one is logged in -->
+            {%  else %}
             <a class="nav-link btn btn-outline" href="/signup">Sign up</a>
             <a class="nav-link btn btn-outline" href="/login">Log in</a>
+            {%  endif %}
         </div>
     </div>
 </nav>
@@ -60,11 +66,9 @@
     </div>
 </div>
 
-<div class="container-lg">
     {% if session %}
         <div class="session"> {{session['firstname']}} is logged in and their authorisation is {{session['authorisation']}}</div>
     {% endif %}
-</div>
 
 {% block content %}
 {% endblock %}

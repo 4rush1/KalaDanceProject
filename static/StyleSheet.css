@@ -63,10 +63,6 @@ nav .btn-outline{
 }
 
 /* CIRCULAR IMAGES */
-.image-text{
-    color: var(--maroon);
-}
-
 .col-md-4{
     text-align: center;
     margin-bottom: 2.5em;
@@ -144,7 +140,18 @@ li{
 }
 
 .alert{
-   color: red;
+    color: red;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.session{
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    color: var(--beige);
+    background-color: var(--maroon);
 }
 
 .quote{
@@ -203,7 +210,7 @@ li{
     background-color: var(--almond);
     padding: 2em 2em;
     margin-bottom: 2em;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: 2em;
     margin-right: 2em;
     border-radius: 40px;
