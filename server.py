@@ -108,6 +108,7 @@ def news_cud():
 # SIGNUP PAGE
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
+    error = "Looks like you already have an account!"
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":
         return render_template('signup.html', firstname = "Arushi", surname = "Jackson", email = "aruj@gmail.com", aboutme = "temp about me", password = "temp")
@@ -115,11 +116,18 @@ def signup():
     elif request.method == "POST":
         f = request.form
         print(f)
-        # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE
-        sql = """ insert into member(firstname, surname, email, age_group, about_me, password, authorisation)
-        values(?,?,?,?,?,?,1) """
+        if f['selgrouplist'] == 'teacher':
+            # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE FOR TEACHERS
+            sql = """ insert into member(firstname, surname, email, age_group, about_me, password, authorisation)
+            values(?,?,?,?,?,?,0)"""
+        else:
+            # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE FOR STUDENTS
+            sql = """ insert into member(firstname, surname, email, age_group, about_me, password, authorisation)
+                        values(?,?,?,?,?,?,1) """
         values_tuple = (f['firstname'], f['surname'], f['email'], f['selgrouplist'], f['aboutme'], f['password'])
         result = run_commit_query(sql, values_tuple, db_path)
+        print(session)
+        return redirect(url_for('index'))
 
 # LOGIN PAGE
 @app.route('/login', methods=["GET", "POST"])

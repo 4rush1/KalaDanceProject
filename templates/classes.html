@@ -28,8 +28,10 @@ Register for one of our classes today!
     <p class="big-text">{{ row['class_description'] }}</p>
     <!-- buttons -->
     <div class="text-end">
+        {%  if session and session['authorisation'] == 0 %}
         <p class="meta">{{ row['class_time'] }}</p>
         <a class="btn btn-lg btn-outline" href="{{ url_for('registration', class_id=row['class_id'])  }}">Register</a>
+        {%  endif %}
     </div>
 </div>
 {% endfor %}

@@ -24,17 +24,17 @@ CONFIRM
 <div class="container_round">
     <h1>Your Details</h1>
     <table>
-        <tr> <td>First Name</td> <td>{{ enrol_data['firstname'] }}</td> </tr>
-        <tr> <td>Surname</td> <td>{{ enrol_data['surname'] }}</td> </tr>
-        <tr> <td>Email</td> <td>{{ enrol_data['email'] }}</td> </tr>
-        <tr> <td>Teacher/Student</td> <td>{{ enrol_data['selgrouplist'] }}</td> </tr>
-        <tr> <td>About Me</td> <td>{{ enrol_data['aboutme'] }}</td> </tr>
+        <tr> <td>First Name</td> <td>{{ signup_data['firstname'] }}</td> </tr>
+        <tr> <td>Surname</td> <td>{{ signup_data['surname'] }}</td> </tr>
+        <tr> <td>Email</td> <td>{{ signup_data['email'] }}</td> </tr>
+        <tr> <td>Teacher/Student</td> <td>{{ signup_data['selgrouplist'] }}</td> </tr>
+        <tr> <td>About Me</td> <td>{{ signup_data['aboutme'] }}</td> </tr>
     </table>
     <br>
     <div class="text-center">
         <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Cancel</a>
         <a href="{{url_for('index') }}" class="btn btn-lg btn-outline">Confirm</a>
-        <a href="{{url_for('enrol', **enrol_data) }}" class="btn btn-lg btn-outline">Edit</a>
+        <a href="{{url_for('signup', **signup_data) }}" class="btn btn-lg btn-outline">Edit</a>
     </div>
     <br>
 </div>
