@@ -91,9 +91,9 @@ def news_cud():
             # the datetime now is a sqlite command --> gets time off server and add it in SQLite format
             # member is fixed at 2 for now, but will change later depending on who is logged in
             sql = """insert into news(title, subtitle, content, newsdate, member_id)
-                        values(?,?,?, datetime('now', 'localtime'),2)"""
-            # tuple values
-            values_tuple = (f['title'], f['title'], f['content'])
+                        values(?,?,?, datetime('now', 'localtime'),?)"""
+            # tuple values, which includes the member_id of the person logged in / in the session
+            values_tuple = (f['title'], f['title'], f['content'], session['member_id'])
             result = run_commit_query(sql, values_tuple, db_path)
             return redirect(url_for('news'))
         elif data['task'] == 'update':
@@ -134,7 +134,7 @@ def login():
         f = request.form
         print(f)
         # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE
-        sql = """ select firstname, email, age_group, about_me, password, authorisation from member where email = ? """
+        sql = """ select member_id, firstname, email, age_group, about_me, password, authorisation from member where email = ? """
         values_tuple = (f['email'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)
         # if the query delivers a result
@@ -146,6 +146,7 @@ def login():
                 # start a session --> give the session some values
                 session['firstname'] = result['firstname']
                 session['authorisation'] = result['authorisation']
+                session['member_id'] = result['member_id']
                 print(session)
                 return redirect(url_for('index'))
             else:

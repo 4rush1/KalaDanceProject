@@ -67,7 +67,10 @@
 </div>
 
     {% if session %}
-        <div class="session"> {{session['firstname']}} is logged in and their authorisation is {{session['authorisation']}}</div>
+        <div class="session"> {{session['firstname']}} is logged in <br>
+            authorisation = {{session['authorisation']}} <br>
+            member_id = {{session['member_id']}} <br>
+        </div>
     {% endif %}
 
 {% block content %}
