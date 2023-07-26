@@ -1,5 +1,5 @@
 # IMPORTING
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from db_function import run_search_query_tuples, run_commit_query
 from datetime import datetime
 
@@ -126,13 +126,14 @@ def signup():
                         values(?,?,?,?,?,?,1) """
         values_tuple = (f['firstname'], f['surname'], f['email'], f['selgrouplist'], f['aboutme'], f['password'])
         result = run_commit_query(sql, values_tuple, db_path)
-        print(session)
-        return redirect(url_for('index'))
+        if result is False:
+            flash(error, category='error')
+            return redirect(url_for('signup'))
+        return redirect(url_for('login'))
 
 # LOGIN PAGE
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    print(session)
     error = "Credentials not recognised"
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":

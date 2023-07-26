@@ -44,7 +44,7 @@
         </ul>
         <div class="ms-auto nav-item">
             <!-- if someone is logged in -->
-            {%  if session %}
+            {%  if session  and session['authorisation']%}
             <a class="nav-link btn btn-outline" href="/logout">Log out</a>
             <!-- if no one is logged in -->
             {%  else %}
@@ -66,13 +66,28 @@
     </div>
 </div>
 
-    {% if session %}
+    {% if session and session['authorisation'] %}
         <div class="session"> {{session['firstname']}} is logged in <br>
             authorisation = {{session['authorisation']}} <br>
             member_id = {{session['member_id']}} <br>
         </div>
     {% endif %}
+<div>
+    {%  with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="alert" role="alert"> {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                    {% else %}
 
+                {%  endif %}
+            {% endfor %}
+        {%  endif %}
+    {%  endwith %}
+
+</div>
 {% block content %}
 {% endblock %}
 
