@@ -43,8 +43,8 @@
             </li>
         </ul>
         <div class="ms-auto nav-item">
-            <!-- if someone is logged in -->
-            {%  if session  and session['authorisation']%}
+            <!-- if someone is logged in and there is an authorisation number for the session  -->
+            {%  if session %}
             <a class="nav-link btn btn-outline" href="/logout">Log out</a>
             <!-- if no one is logged in -->
             {%  else %}

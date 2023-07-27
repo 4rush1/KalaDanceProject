@@ -239,6 +239,12 @@ li{
     margin: auto;
 }
 
+.carousel{
+    max-width: 600px;
+    display: block;
+    margin: auto;
+}
+
 /* --- banner styles --- */
 .text-float{
     font-size: 3em;
