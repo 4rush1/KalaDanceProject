@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+glossary
+{% endblock %}
+
+{% block banner %}
+static/images/BigBanner.jpg
+{% endblock %}
+
+{% block header %}
+GLOSSARY
+{% endblock %}
+
+{% block quote %}
+
+{% endblock %}
+
+{% block source %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container_round">
+    <h1>Glossary</h1>
+    <table>
+        {% for row in glossary %}
+        <tr> <td>{{ row['word'] }}</td> <td>{{ row['meaning'] }}</td> <td>{{ row['pronunciation'] }}</td></tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

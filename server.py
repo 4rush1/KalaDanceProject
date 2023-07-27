@@ -22,8 +22,17 @@ def index():
 
 # INITIAL INFO PAGE
 @app.route('/initialinfo')
-def BeginnerInfo():
+def InitialInfo():
     return render_template("initial_info.html")
+
+@app.route('/glossary')
+def glossary():
+    sql = "select word_id, word, pronunciation, meaning from glossary"
+    values_tuple=()
+    result = run_search_query_tuples(sql, values_tuple, db_path, True)
+    for k in result:
+        print(k['word'])
+    return render_template("glossary.html", glossary=result)
 
 # NEWS PAGE
 @app.route('/news')
