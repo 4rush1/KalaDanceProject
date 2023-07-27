@@ -4,6 +4,7 @@ drop table if exists news;
 drop table if exists member;
 drop table if exists classes;
 drop table if exists registration;
+drop table if exists glossary;
 
 create table member(
     member_id integer primary key autoincrement,
@@ -40,6 +41,13 @@ create table registration(
     foreign key(class_id) references classes (class_id),
     foreign key(member_id) references member(member_id),
     primary key (member_id, class_id)
+);
+
+create table glossary(
+    word_id integer primary key autoincrement,
+    word text not null,
+    pronunciation text not null,
+    meaning text not null
 );
 
 /* CREATING MEMBERS */
@@ -183,3 +191,74 @@ insert into registration(member_id, class_id)
 values ((select member_id from member where firstname = 'Aakriti'),
         (select class_id from classes where class_title = 'Lucknow Gharana')
         );
+
+/* CREATING GLOSSARY */
+insert into glossary(word, meaning, pronunciation)
+values('Guru', 'teacher',
+       'gu-roo: ''u'' = the ''u'' in ''argUe'', ''oo'' is a longer vowel, the ''r'' is rolled'
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Pandit', 'someone who is very knowledgeable in a certain area',
+       'pun-di-t: u = the ''u'' in ''pUn'', ''d'' = a soft ''d'' which is' ||
+       ' pronounced by tapping your tongue at the tip of your teeth, t = a sharp ''t'' ' ||
+       'pronounced by tapping the tip of your tongue against the top of your mouth'
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Kala',  'someone who is very knowledgeable in a certain area',
+       'ku-laa: u = the ''u'' in ''Under'', ' ||
+       'laa = the ''laa'' in ''do re me'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Tatkaar',  'the basis of all footwork, you tap your feet in the pattern ' ||
+        'right, left, right, left, left, right, left, right, right… and so on ',
+       'tut-caar: both t''s = a hard t pronounced similar to a d, u = the ''u'' in ''Under'', ' ||
+       'caar = similar to the word ''car'' with a longer vowel and rolled ''r'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Tukda', 'pre-set footwork and hand movements',
+       'took-daa: took = the English word with a sharp ''t'', ' ||
+       ' daa = the ''d'' is mixed with an ''r'' by sliding your' ||
+       'tongue from the back of your mouth and hitting it against ' ||
+       'the top of your mouth (just before your teeth, not on your teeth'
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Chakkar', 'to spin',
+       'chuck-kur: chuck = pronounced like the English word with a sharper ''ch''' ||
+       'kur = the ''u'' in ''Under'' with rolled ''r'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Chakkardaar tukda', 'pre-set footwork and hand movements which are repeated 3 times',
+       'chuck-kur-DAAR took-daa: the same as the last word ''chakkar'' except with a ''daar''' ||
+       'at the end and the last-to-last word ''tukda''. daar = a soft ''d'' with a rolled ''r'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Hastak', 'hand positions for dance, each hand position represents something',
+       'huss-tuck: huss = say ''fuss'' with an ''h'', tuck = the english word with a hard ''t'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Gharana', 'a slight variation in dance style, originating from different regions',
+       'gh-u-raa-naa: gh = say the ''g'' and ''h'' at the same time, u = the ''u'' in ''Under'', ' ||
+       'raa = like the exclamation ''aah'' with a rolled ''r'' at the start, naa = like the informal slang ''nah'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Ghungroo', 'the bells we tied to our feet so that the footwork is heard',
+       'gh-oo-groo: gh = say the ''g'' and ''h'' at the same time, oo = a very ' ||
+       'nasal ''ooh'', groo = like the word ''groom'' without the ''m'' and with a rolled ''r'''
+       );
+
+insert into glossary(word, meaning, pronunciation)
+values('Natya Shastra', 'an ancient book about dance written around 200 BCE to  200 CE',
+       'naa-t-yuh shaa-str-uh : naa = like the informal slang ''nah'', t = a sharp ''t'', ' ||
+       'yuh = like the informal slang for ''yes'' (Ariana Grande uses this word a lot during performances), ' ||
+       'shaa = like the exclamation ''aah'' with a ''sh'' in front, str = like ''STRing'' with a hard ''t'' and rolled ''r''' ||
+       'uh = the ''u'' in ''under'''
+       );
