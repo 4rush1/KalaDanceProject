@@ -81,11 +81,9 @@ def news_cud():
                                    id=data['id'],
                                    task=data['task'])
         elif data['task'] == 'add':
-            temp = {'title':'test title', 'subtitle':'test subtitle', 'content':'test content'}
             return render_template("news_cud.html",
                                    id=0,
-                                   task=data['task'],
-                                   **temp)
+                                   task=data['task'])
         else:
             message = "Unrecognised task coming from news page"
             return render_template("error.html", message=message)
@@ -102,7 +100,7 @@ def news_cud():
             sql = """insert into news(title, subtitle, content, newsdate, member_id)
                         values(?,?,?, datetime('now', 'localtime'),?)"""
             # tuple values, which includes the member_id of the person logged in / in the session
-            values_tuple = (f['title'], f['title'], f['content'], session['member_id'])
+            values_tuple = (f['title'], f['subtitle'], f['content'], session['member_id'])
             result = run_commit_query(sql, values_tuple, db_path)
             return redirect(url_for('news'))
         elif data['task'] == 'update':
@@ -120,7 +118,7 @@ def signup():
     error = "Looks like you already have an account!"
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":
-        return render_template('signup.html', firstname = "Arushi", surname = "Jackson", email = "aruj@gmail.com", aboutme = "temp about me", password = "temp")
+        return render_template('signup.html')
     # POST : TO POST INFO FROM FORM
     elif request.method == "POST":
         f = request.form
@@ -146,12 +144,12 @@ def login():
     error = "Credentials not recognised"
     # GET: TO GET INFO FROM FORM
     if request.method == "GET":
-        return render_template('login.html', email = "ab@gmail.com", password = "temp")
+        return render_template('login.html')
     # POST : TO POST INFO FROM FORM
     elif request.method == "POST":
         f = request.form
         print(f)
-        # QUERY TO INSERT FORM VALUES INTO MEMBER TABLE
+        # QUERY TO SELECT VALUES FOR SESSION
         sql = """ select member_id, firstname, email, age_group, about_me, password, authorisation from member where email = ? """
         values_tuple = (f['email'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)

@@ -1,8 +1,8 @@
 from db_function import run_search_query_tuples
 
-# query test #
-# query for the news page #
-def get_news(db_path):  # stands for path #
+# query test
+# query for the news page
+def get_news(db_path):
     sql = """ select news.title, news.subtitle, news.content, member.firstname 
     from news 
     join member on news.member_id = member.member_id;
@@ -11,8 +11,6 @@ def get_news(db_path):  # stands for path #
     for row in result:
         for k in row.keys():
             print(k)
-            print(row[k])
-
 
 def get_classes(db_path):
     # query for the classes page
@@ -60,7 +58,6 @@ def add_member(db_path):
             # tuple values
             result = run_commit_query(sql, values_tuple, db_path)
             return redirect(url_for('registrations'))
-
 
         elif request.method == "POST":
             required_keys = ['member_id']
@@ -114,6 +111,6 @@ def signup(db_path):
 
 if __name__ == "__main__":
     db_path = 'data/dance_db.sqlite'
-    # get_news(db_path)
+    get_news(db_path)
     # get_classes(db_path)
-    registration(db_path)
+    # registration(db_path)

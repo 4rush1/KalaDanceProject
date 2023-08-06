@@ -177,6 +177,14 @@ li{
     margin-bottom: 2em;
  }
 
+.container-maroon{
+    border: 0px solid blue;
+    background-color: var(--maroon);
+    margin-bottom: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
+ }
+
 .container-collapse{
     border: 0px solid blue;
     margin-top: 1em;
@@ -243,6 +251,11 @@ li{
     max-width: 600px;
     display: block;
     margin: auto;
+}
+
+.carousel-caption{
+   position: absolute;
+    margin-top: 3px;
 }
 
 /* --- banner styles --- */

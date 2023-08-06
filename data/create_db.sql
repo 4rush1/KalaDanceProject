@@ -51,7 +51,7 @@ create table glossary(
 );
 
 /* CREATING MEMBERS */
-/* Authorisation of 0 is for teachers who can made news, 1 is for student who can add comments but CANT make news */
+/* Authorisation of 0 is for teachers who can made news, 1 is for students */
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
 values( 'Usha', 'Bhatnagar', 'mj@gmail.com', 'teacher', 'Head of dance group', 'temp', 0
 );
@@ -91,8 +91,7 @@ insert into news( title, subtitle, content, newsdate, member_id)
 values( 'Diwali Dance performance',
        'Learn dance routine before the performance!',
        'Kala dance is performing for a Diwali festival in Welly, come along and watch us! ' || char(10) ||
-       'For those in the group, ' ||
-       'please learn the dance routine before then!',
+       'For those in the group, please learn the dance routine before then!',
        '2023-05-12 20:30:00', /* SQLite format */
        (select member_id from member where firstname='Akshara')
        );
@@ -200,9 +199,9 @@ values('Guru', 'teacher',
 
 insert into glossary(word, meaning, pronunciation)
 values('Pandit', 'someone who is very knowledgeable in a certain area',
-       'pun-di-t: u = the ''u'' in ''pUn'', ''d'' = a soft ''d'' which is' ||
-       ' pronounced by tapping your tongue at the tip of your teeth, t = a sharp ''t'' ' ||
-       'pronounced by tapping the tip of your tongue against the top of your mouth'
+       'pun-di-t: u = the ''u'' in ''pUn''' ||
+       '''d'' = a soft ''d'' which is pronounced by tapping your tongue at the tip of your teeth' ||
+       't = a sharp ''t'' pronounced by tapping the tip of your tongue against the top of your mouth'
        );
 
 insert into glossary(word, meaning, pronunciation)
