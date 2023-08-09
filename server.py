@@ -66,7 +66,6 @@ def news_cud():
             values_tuple = (data['id'],)
             # tuple is passed into the result
             result = run_commit_query(sql, values_tuple, db_path)
-            print("delete")
             print(result)
             # redirects us back to the news page after deleting
             return redirect(url_for('news'))
@@ -102,12 +101,14 @@ def news_cud():
             # tuple values, which includes the member_id of the person logged in / in the session
             values_tuple = (f['title'], f['subtitle'], f['content'], session['member_id'])
             result = run_commit_query(sql, values_tuple, db_path)
+            print(result)
             return redirect(url_for('news'))
         elif data['task'] == 'update':
             sql = """update news set title=?, subtitle=?, content=?, newsdate=datetime('now', 'localtime') where news_id=?"""
             # tuple values
             values_tuple = (f['title'], f['subtitle'], f['content'], data['id'])
             result = run_commit_query(sql, values_tuple, db_path)
+            print(result)
             # collect the data from the form and update the database to the sent id
             return redirect(url_for('news'))
     return render_template("news_cud.html")

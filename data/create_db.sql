@@ -31,8 +31,7 @@ create table classes(
     class_id integer primary key autoincrement,
     class_title text not null,
     class_subtitle text not null,
-    class_description text not null,
-    class_time text not null
+    class_description text not null
 );
 
 create table registration(
@@ -62,28 +61,28 @@ insert into member( firstname, surname, email, age_group, about_me, password, au
 values( 'Aditya', 'Chopra', 'ac@gmail.com', 'teacher', 'Have learnt the Jaipur Gharana in India', 'temp', 0
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Amrita', 'Rao', 'amri@gmail.com', 'student', 'Have learnt the Jaipur, Lucknow and Banaras gharana!', 'temp', 1
+values( 'Amrita', 'Rao', 'amri@gmail.com', 'junior student', 'Have learnt the Jaipur, Lucknow and Banaras gharana!', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Nandini', 'Arora', 'nandini@gmail.com', 'student', 'I want to learn the Banaras Gharana', 'temp', 1
+values( 'Nandini', 'Arora', 'nandini@gmail.com', 'junior student', 'I want to learn the Banaras Gharana', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Rahul', 'Anand', 'ag@gmail.com', 'student', 'I just really want to learn about the culture, no experience yet!', 'temp', 1
+values( 'Rahul', 'Anand', 'ag@gmail.com', 'junior student', 'I just really want to learn about the culture, no experience yet!', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Akshara', 'Goenka', 'akshu@gmail.com', 'student', 'really want to learn the Banaras Gharana', 'temp', 1
+values( 'Akshara', 'Goenka', 'akshu@gmail.com', 'senior student', 'really want to learn the Banaras Gharana', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Anjali', 'Raichand', 'anjali@gmail.com', 'student', 'I would love to learn the Jaipur gharana', 'temp', 1
+values( 'Anjali', 'Raichand', 'anjali@gmail.com', 'senior student', 'I would love to learn the Jaipur gharana', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Tina', 'Jones', 'tina.b@gmail.com', 'student', 'I would love to learn the Jaipur gharana', 'temp', 1
+values( 'Tina', 'Jones', 'tina.b@gmail.com', 'senior student', 'I would love to learn the Jaipur gharana', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Arjun', 'Srivastav', 'arjun.s@gmail.com', 'student', 'Have learnt a bit of the Lucknow gharana, just want to learn more!', 'temp', 1
+values( 'Arjun', 'Srivastav', 'arjun.s@gmail.com', 'senior student', 'Have learnt a bit of the Lucknow gharana, just want to learn more!', 'temp', 1
 );
 insert into member( firstname, surname, email, age_group, about_me, password, authorisation)
-values( 'Aakriti', 'Mathur', 'aakriti.s@gmail.com', 'student', 'Have learnt the banaras gharana to an intermediate level', 'temp', 1
+values( 'Aakriti', 'Mathur', 'aakriti.s@gmail.com', 'senior student', 'Have learnt the banaras gharana to an intermediate level', 'temp', 1
 );
 
 /* CREATING NEWS */
@@ -105,33 +104,27 @@ values( 'Class cancelled',
        );
 
 /* CREATING CLASSES */
-insert into classes(class_title, class_subtitle, class_description, class_time)
+insert into classes(class_title, class_subtitle, class_description)
 values( 'Lucknow Gharana',
        'If you like acting & graceful movements, this class is for you!',
        'The Lucknow Gharana was partly developed in Indian Kingdoms as a form of entertainment. ' ||
        'Therefore it largely  focuses on storytelling, acting and emotions (known as bhaav). ' ||
-       'Along with this, the hand movements are often very graceful and the footwork is complex ',
-       'Junior Students: every Monday 3:30-4:30 pm' ||
-       'Senior Students: every Monday 4:30-5:30 pm'
+       'Along with this, the hand movements are often very graceful and the footwork is complex '
        );
 
-insert into classes(class_title, class_subtitle, class_description, class_time)
+insert into classes(class_title, class_subtitle, class_description)
 values( 'Jaipur Gharana',
        'Want to learn more powerful moves? Then learn the Jaipur Gharana!',
        'This dance form developed under the sponsorship of Rajput Warriors in ancient India,' ||
-       ' therefore, it contains lots of fast spins, complex footwork and even warrior-style movements',
-       'Junior Students: every Wednesday 3:30-4:30 pm' ||
-       'Senior Students: every Wednesday 4:30-5:30 pm'
+       ' therefore, it contains lots of fast spins, complex footwork and even warrior-style movements'
        );
 
-insert into classes(class_title, class_subtitle, class_description, class_time)
+insert into classes(class_title, class_subtitle, class_description)
 values( 'Banaras Gharana',
        'This Gharana teaches many skills, from dancing on plates, to spinning on your knees.',
        'The Banaras Gharana is both graceful and powerful. If you learn this gharana, you will certainly' ||
        ' have great balance skills, due to the unique and complex moves: such as spinning in both directions,' ||
-       ' balancing/dancing on metal plates, spinning on your knees and a lot more jumping! ',
-       'Junior Students: every Friday 3:30-4:30 pm' ||
-       'Senior Students: every Friday 4:30-5:30 pm'
+       ' balancing/dancing on metal plates, spinning on your knees and a lot more jumping! '
        );
 
 insert into registration(member_id, class_id)
