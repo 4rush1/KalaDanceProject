@@ -150,7 +150,7 @@ def login():
     elif request.method == "POST":
         f = request.form
         print(f)
-        # QUERY TO SELECT VALUES FOR SESSION
+        # SELECT QUERY TO CHECK IF EMAIL IN MEMBER TABLE and to select values for session
         sql = """ select member_id, firstname, email, age_group, about_me, password, authorisation from member where email = ? """
         values_tuple = (f['email'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)
@@ -167,9 +167,9 @@ def login():
                 print(session)
                 return redirect(url_for('index'))
             else:
-                return render_template('login.html', email="ab@gmail.com", password="temp", error=error)
+                return render_template('login.html', error=error)
         else:
-            return render_template('login.html', email="ab@gmail.com", password="temp", error=error)
+            return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():

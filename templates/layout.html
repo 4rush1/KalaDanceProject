@@ -68,13 +68,6 @@
         <div class="header-quote">{% block source %}{% endblock %}</div>
     </div>
 </div>
-
-    {% if session and session['authorisation'] %}
-        <div class="session"> {{session['firstname']}} is logged in <br>
-            authorisation = {{session['authorisation']}} <br>
-            member_id = {{session['member_id']}} <br>
-        </div>
-    {% endif %}
 <div>
     {%  with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}

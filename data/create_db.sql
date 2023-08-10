@@ -29,9 +29,9 @@ create table news(
 
 create table classes(
     class_id integer primary key autoincrement,
-    class_title text not null,
-    class_subtitle text not null,
-    class_description text not null
+    class_title text not null unique,
+    class_subtitle text not null unique,
+    class_description text not null unique
 );
 
 create table registration(
@@ -44,9 +44,9 @@ create table registration(
 
 create table glossary(
     word_id integer primary key autoincrement,
-    word text not null,
-    pronunciation text not null,
-    meaning text not null
+    word text not null unique,
+    pronunciation text not null unique,
+    meaning text not null unique
 );
 
 /* CREATING MEMBERS */
