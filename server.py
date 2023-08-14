@@ -136,7 +136,6 @@ def signup():
         result = run_commit_query(sql, values_tuple, db_path)
         if result is False:
             flash(error, category='error')
-            return redirect(url_for('signup'))
         return redirect(url_for('login'))
 
 # LOGIN PAGE

@@ -22,7 +22,6 @@ GLOSSARY
 
 {% block content %}
 <div class="container_round">
-    <h1>Glossary</h1>
     <table>
         {% for row in glossary %}
         <tr><td>{{ row['word'] }}</td> <td>{{ row['meaning'] }}</td> <td>{{ row['pronunciation'] }}</td></tr>

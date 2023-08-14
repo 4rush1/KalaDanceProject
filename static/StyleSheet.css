@@ -62,31 +62,6 @@ nav .btn-outline{
     color: var(--beige);
 }
 
-/* CIRCULAR IMAGES */
-.col-md-4{
-    text-align: center;
-    margin-bottom: 2.5em;
-}
-
-.img-size{
-    display: block;
-}
-/* -- circular overlay ---*/
-    .circular-overlay{
-
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:100%;
-    transform:translate(-50%,-50%);
-    border: 0px solid green;
-
-    }
-    .circular-overlay p{
-    color:var(--light-beige);
-    font-size: 1em;
-    }
-
 /* TEXT */
 .body-text{
     font-size: 1em;
@@ -170,6 +145,30 @@ li{
     padding-bottom: 1em;
 }
 
+/* --- banner styles --- */
+.text-float{
+    font-size: 3em;
+    text-align: center;
+    font-weight: 600;
+    color: var(--beige);
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:100%;
+    transform:translate(-50%,-50%);
+    border: 0px solid green;
+
+    }
+.text-float .header{
+    font-size: 3em;
+    }
+
+.text-float .header-quote{
+    font-size: 0.6em;
+    text-align: right;
+    padding: 0em 1em;
+    }
+
 /* CONTAINERS */
 .container-lg{
     border: 0px solid blue;
@@ -204,8 +203,9 @@ li{
     padding:0;
 }
 
-.col-lg-6{
-    border: 0px solid blue;
+.col-md-4{
+    text-align: center;
+    margin-bottom: 2.5em;
 }
 
 .row{
@@ -247,6 +247,26 @@ li{
     margin: auto;
 }
 
+.img-size{
+    display: block;
+}
+/* -- circular images ---*/
+    .circular-overlay{
+
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:100%;
+    transform:translate(-50%,-50%);
+    border: 0px solid green;
+
+    }
+    .circular-overlay p{
+    color:var(--light-beige);
+    font-size: 1em;
+    }
+
+/* Gallery */
 .carousel{
     max-width: 600px;
     display: block;
@@ -257,30 +277,6 @@ li{
    position: absolute;
     margin-top: 3px;
 }
-
-/* --- banner styles --- */
-.text-float{
-    font-size: 3em;
-    text-align: center;
-    font-weight: 600;
-    color: var(--beige);
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:100%;
-    transform:translate(-50%,-50%);
-    border: 0px solid green;
-
-    }
-.text-float .header{
-    font-size: 3em;
-    }
-
-.text-float .header-quote{
-    font-size: 0.6em;
-    text-align: right;
-    padding: 0em 1em;
-    }
 
 .banner{
     margin-top: 2em;
@@ -296,10 +292,11 @@ label, input[type='text'], input[type='email'], input[type='tel'], textarea{
 table{
     margin:auto;
 }
+
 td{
     color: var(--maroon);
     font-size: 1.5em;
-    padding: 0.25em;
+    padding: 1em;
     border-bottom: 1px solid var(--maroon);
 }
 td:first-child{

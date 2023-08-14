@@ -192,13 +192,13 @@ values('Guru', 'teacher',
 
 insert into glossary(word, meaning, pronunciation)
 values('Pandit', 'someone who is very knowledgeable in a certain area',
-       'pun-di-t: u = the ''u'' in ''pUn''' ||
-       '''d'' = a soft ''d'' which is pronounced by tapping your tongue at the tip of your teeth' ||
-       't = a sharp ''t'' pronounced by tapping the tip of your tongue against the top of your mouth'
+       'pun-di-t: u = the ''u'' in ''pUn'',' ||
+       ' ''d'' = a soft ''d'' which is pronounced by tapping your tongue at the tip of your teeth,' ||
+       ' t = a sharp ''t'' pronounced by tapping the tip of your tongue against the top of your mouth'
        );
 
 insert into glossary(word, meaning, pronunciation)
-values('Kala',  'someone who is very knowledgeable in a certain area',
+values('Kala',  'means art',
        'ku-laa: u = the ''u'' in ''Under'', ' ||
        'laa = the ''laa'' in ''do re me'''
        );
@@ -214,25 +214,25 @@ insert into glossary(word, meaning, pronunciation)
 values('Tukda', 'pre-set footwork and hand movements',
        'took-daa: took = the English word with a sharp ''t'', ' ||
        ' daa = the ''d'' is mixed with an ''r'' by sliding your' ||
-       'tongue from the back of your mouth and hitting it against ' ||
-       'the top of your mouth (just before your teeth, not on your teeth'
+       ' tongue from the back of your mouth and hitting it against ' ||
+       'the top of your mouth (just before your teeth), not on your teeth'
        );
 
 insert into glossary(word, meaning, pronunciation)
 values('Chakkar', 'to spin',
-       'chuck-kur: chuck = pronounced like the English word with a sharper ''ch''' ||
+       'chuck-kur: chuck = pronounced like the English word with a sharper ''ch'', ' ||
        'kur = the ''u'' in ''Under'' with rolled ''r'''
        );
 
 insert into glossary(word, meaning, pronunciation)
 values('Chakkardaar tukda', 'pre-set footwork and hand movements which are repeated 3 times',
-       'chuck-kur-DAAR took-daa: the same as the last word ''chakkar'' except with a ''daar''' ||
-       'at the end and the last-to-last word ''tukda''. daar = a soft ''d'' with a rolled ''r'''
+       'chuck-kur-DAAR took-daa: the same as the last word ''chakkar'' except with a ''daar'' ' ||
+       'at the end, and the same as the word ''tukda''. daar = a soft ''d'' with a rolled ''r'''
        );
 
 insert into glossary(word, meaning, pronunciation)
 values('Hastak', 'hand positions for dance, each hand position represents something',
-       'huss-tuck: huss = say ''fuss'' with an ''h'', tuck = the english word with a hard ''t'''
+       'huss-tuck: huss = say ''fuss'' with an ''h'', tuck = the english word with a hard ''t'', similar to a d'
        );
 
 insert into glossary(word, meaning, pronunciation)
@@ -243,7 +243,7 @@ values('Gharana', 'a slight variation in dance style, originating from different
 
 insert into glossary(word, meaning, pronunciation)
 values('Ghungroo', 'the bells we tied to our feet so that the footwork is heard',
-       'gh-oo-groo: gh = say the ''g'' and ''h'' at the same time, oo = a very ' ||
+       'gh-oon-groo: gh = say the ''g'' and ''h'' at the same time, oon = a very ' ||
        'nasal ''ooh'', groo = like the word ''groom'' without the ''m'' and with a rolled ''r'''
        );
 
@@ -251,6 +251,6 @@ insert into glossary(word, meaning, pronunciation)
 values('Natya Shastra', 'an ancient book about dance written around 200 BCE to  200 CE',
        'naa-t-yuh shaa-str-uh : naa = like the informal slang ''nah'', t = a sharp ''t'', ' ||
        'yuh = like the informal slang for ''yes'' (Ariana Grande uses this word a lot during performances), ' ||
-       'shaa = like the exclamation ''aah'' with a ''sh'' in front, str = like ''STRing'' with a hard ''t'' and rolled ''r''' ||
+       'shaa = like the exclamation ''aah'' with a ''sh'' in front, str = like ''STRing'' with a hard ''t'' and rolled ''r'', ' ||
        'uh = the ''u'' in ''under'''
        );
