@@ -59,13 +59,21 @@
 </nav>
 </div>
 
-<!-- BANNER -->
-<div class="container-fluid position-relative mb-0">
-    <div > <img class="img-fluid part-img banner card-img-top" src="{% block banner %}{% endblock %}" alt=""></div>
+<!-- MAIN BANNER -->
+<div class="container-fluid position-relative">
+    <div > <img class="img-fluid part-img banner" src="{% block banner %}{% endblock %}" alt=""></div>
     <div class="text-float">
         <div class="header">{% block header %}{% endblock %} </div>
         <div class="header-quote">{% block quote %}{% endblock %}</div>
         <div class="header-quote">{% block source %}{% endblock %}</div>
+    </div>
+</div>
+<div class="container-fluid position-relative">
+    <div > <img class="img-fluid part-img smallbanner" src="{% block smallbanner %}{% endblock %}" alt=""></div>
+    <div class="text-float">
+        <div class="small-header">{% block smallheader %}{% endblock %} </div>
+        <div class="small-header-quote">{% block smallquote %}{% endblock %}</div>
+        <div class="small-header-quote">{% block smallsource %}{% endblock %}</div>
     </div>
 </div>
 <div>

@@ -62,6 +62,20 @@ nav .btn-outline{
     color: var(--beige);
 }
 
+.btn{
+    background-color: var(--maroon);
+    color: var(--light-beige);
+}
+
+.btn-round {
+    border-radius: 70%;
+    background-color: var(--maroon);
+}
+
+.btn-outline-round{
+    border: 1px solid var(--maroon);
+}
+
 /* TEXT */
 .body-text{
     font-size: 1em;
@@ -161,12 +175,22 @@ li{
     }
 .text-float .header{
     font-size: 3em;
+    padding-right: 3em;
     }
 
 .text-float .header-quote{
     font-size: 0.6em;
     text-align: right;
-    padding: 0em 1em;
+    }
+
+.text-float .small-header{
+    font-size: 3em;
+    text-align: right;
+    }
+
+.text-float .small-header-quote{
+    font-size: 0.6em;
+    text-align: right;
     }
 
 /* CONTAINERS */
@@ -278,8 +302,13 @@ li{
     margin-top: 3px;
 }
 
+/* Banner */
 .banner{
-    margin-top: 2em;
+    padding-top: 1em;
+}
+
+.smallbanner{
+    padding-top: 3em;
 }
 
 /* FORM */
@@ -347,6 +376,13 @@ td:first-child{
      font-size:2.3em;
      }
 
+    .text-float .small-header{
+     font-size:2.3em;
+     }
+
+  nav .btn-outline {
+      display: block;
+  }
 }
 
 @media only screen and (max-width:768px){
@@ -372,6 +408,14 @@ td:first-child{
      }
 
    .text-float .header-quote{
+        display:none;
+    }
+
+   .text-float .small-header{
+     font-size:1.5em;
+     }
+
+   .text-float .small-header-quote{
         display:none;
     }
 
