@@ -124,7 +124,7 @@ values( 'Banaras Gharana',
        'This Gharana teaches many skills, from dancing on plates, to spinning on your knees.',
        'The Banaras Gharana is both graceful and powerful. If you learn this gharana, you will certainly' ||
        ' have great balance skills, due to the unique and complex moves: such as spinning in both directions,' ||
-       ' balancing/dancing on metal plates, spinning on your knees and a lot more jumping! '
+       ' dancing on metal plates, spinning on your knees and a lot more jumping! '
        );
 
 insert into registration(member_id, class_id)

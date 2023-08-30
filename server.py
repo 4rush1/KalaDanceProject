@@ -21,9 +21,9 @@ def index():
     return render_template("index.html")
 
 # INITIAL INFO PAGE
-@app.route('/initialinfo')
-def InitialInfo():
-    return render_template("initial_info.html")
+@app.route('/info')
+def info():
+    return render_template("info.html")
 
 @app.route('/glossary')
 def glossary():

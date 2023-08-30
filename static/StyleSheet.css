@@ -69,11 +69,6 @@ nav .btn-outline{
 
 .btn-round {
     border-radius: 70%;
-    background-color: var(--maroon);
-}
-
-.btn-outline-round{
-    border: 1px solid var(--maroon);
 }
 
 /* TEXT */
@@ -107,6 +102,10 @@ h3{
     color: var(--maroon);
 }
 
+.center{
+   text-align: center;
+}
+
 h4{
     font-size: 1.5em;
     font-weight: 600;
@@ -118,14 +117,14 @@ li{
     color: var(--maroon);
 }
 
-/* special colour for text */
+/* special colours for text */
 .special{
-    color: var(--beige);
-    background-color: var(--maroon);
+    color: var(--beige) !important;
+    background-color: var(--maroon) !important;
 }
 
 .special_text{
-    color: var(--beige);
+    color: var(--beige) !important;
 }
 
 .alert{
@@ -135,19 +134,11 @@ li{
     text-align: center;
 }
 
-.session{
-    font-size: 1.5em;
-    font-weight: 500;
-    text-align: center;
-    color: var(--beige);
-    background-color: var(--maroon);
-}
-
 .quote{
     font-size: 1.5em;
     font-weight: 600;
     color: var(--maroon);
-    padding-right: 2em;
+    padding: 0em 1.3em;
     padding-top: 1em;
 }
 
@@ -174,23 +165,25 @@ li{
 
     }
 .text-float .header{
-    font-size: 3em;
-    padding-right: 3em;
+    font-size: 3.1em;
     }
 
 .text-float .header-quote{
     font-size: 0.6em;
     text-align: right;
+    padding: 0em 1em;
     }
 
 .text-float .small-header{
-    font-size: 3em;
+    font-size: 2.6em;
     text-align: right;
+    padding: 0em 0.5em;
     }
 
 .text-float .small-header-quote{
     font-size: 0.6em;
     text-align: right;
+    padding: 0em 0.6em;
     }
 
 /* CONTAINERS */
@@ -247,6 +240,7 @@ li{
     margin-right: 2em;
     border-radius: 40px;
  }
+
 .small_container_round{
     border: 0px solid blue;
     background-color: var(--almond);
@@ -271,23 +265,29 @@ li{
     margin: auto;
 }
 
-.img-size{
-    display: block;
-}
 /* -- circular images ---*/
     .circular-overlay{
-
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:100%;
-    transform:translate(-50%,-50%);
-    border: 0px solid green;
+        position:absolute;
+        left:50%;
+        top:54%;
+        width:100%;
+        transform:translate(-50%,-50%);
+        border: 0px solid green;
 
     }
     .circular-overlay p{
-    color:var(--light-beige);
-    font-size: 1em;
+        padding: 0.7em 0.5em;
+        color: var(--beige) !important;
+        font-size: 1.2em !important;
+        font-weight: 500 !important;
+        text-align: center;
+    }
+
+    .circular-overlay h4{
+        color: var(--beige) !important;
+        font-size: 2em !important;
+        font-weight: 600 !important;
+        text-align: center;
     }
 
 /* Gallery */
@@ -304,11 +304,7 @@ li{
 
 /* Banner */
 .banner{
-    padding-top: 1em;
-}
-
-.smallbanner{
-    padding-top: 3em;
+    margin-top: 1.5em;
 }
 
 /* FORM */
@@ -325,9 +321,10 @@ table{
 td{
     color: var(--maroon);
     font-size: 1.5em;
-    padding: 1em;
+    padding: 0.2em 1em;
     border-bottom: 1px solid var(--maroon);
 }
+
 td:first-child{
     text-align: right;
     font-weight: bold;
@@ -369,20 +366,58 @@ td:first-child{
 }
 
 /* MEDIA QUERIES */
+@media only screen and (max-width:1400px){
+
+    .text-float .small-header{
+     font-size:2.2em;
+     }
+
+    .text-float .small-header-quote{
+    font-size: 0.5em;
+    text-align: right;
+    }
+
+}
+
+@media only screen and (max-width:1200px){
+
+    .text-float .small-header{
+     font-size:1.9em;
+     }
+
+    .text-float .small-header-quote{
+    font-size: 0.45em;
+    text-align: right;
+    }
+
+}
 
 @media only screen and (max-width:992px){
 
    .text-float .header{
-     font-size:2.3em;
+     font-size:1.9em;
      }
 
     .text-float .small-header{
-     font-size:2.3em;
+     font-size:1.5em;
      }
+
+    .text-float .header-quote{
+        display:none;
+    }
+
+    .text-float .small-header-quote{
+    font-size: 0.4em;
+    text-align: right;
+    }
 
   nav .btn-outline {
       display: block;
   }
+
+  .circular-overlay p{
+      padding: 0.2em 0.7em;
+    }
 }
 
 @media only screen and (max-width:768px){
@@ -412,7 +447,7 @@ td:first-child{
     }
 
    .text-float .small-header{
-     font-size:1.5em;
+     font-size:1.1em;
      }
 
    .text-float .small-header-quote{
@@ -422,5 +457,31 @@ td:first-child{
    .subtitle{
        font-size:1.5em;
    }
+
+   td {
+       font-size: 1.2em;
+       padding: 0.1em 0.5em;
+   }
+
+   .circular-overlay p{
+      padding: 0.75em 0.5em;
+    }
+
+}
+
+@media only screen and (max-width:576px){
+
+    .text-float .small-header{
+     font-size:1em;
+     }
+
+    .text-float .small-header-quote{
+        display:none;
+    }
+
+    td{
+       font-size: 1em;
+       padding: 0.1em 0.5em;
+    }
 
 }

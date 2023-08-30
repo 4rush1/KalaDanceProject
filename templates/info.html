@@ -1,23 +1,20 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Initial Info
+Information
 {% endblock %}
 
 {% block smallbanner %}
-static/images/InitialInfo.jpg
+static/images/Info.jpg
 {% endblock %}
 
 {% block smallheader %}
-INITIAL INFO
+INFO
 {% endblock %}
 
 {% block smallquote %}
-
-{% endblock %}
-
-{% block smallsource %}
-
+Find information about<br>
+our classes here
 {% endblock %}
 
 {% block content %}
@@ -193,29 +190,23 @@ INITIAL INFO
        <div class="col-lg-6">
            <h3>Curriculumn for all junior and all senior classes</h3>
            <br>
-           <h4>First class is free for all students!</h4>
-           <ol>
-               <li><b>Junior Students: </b></li>
-               <li>Runs for around 4 months and 1 week in each class:</li>
-               <ul>
-                   <li>Learn how to count kathak beats (2 lessons) </li>
-                   <li>Learn basic tatkaar (4 lessons) </li>
-                   <li>Learn basic tukda (4 lessons) </li>
-                   <li>Learn tihai (4 lessons) </li>
-                   <li>Learn chakkar (3 lessons) </li>
-               </ul>
-           </ol>
-           <ol>
-               <li><b>Senior Students:</b></li>
-               <li>Runs for around 4 months and 1 week in each class:</li>
-               <ul>
-                   <li>Learn chakkardar tukdas (4 lessons)</li>
-                   <li>Learn more complex tukdas (4 lessons)</li>
-                   <li>Learn hastak (2 lessons)</li>
-                   <li>Learn bhaav / emotions (1 lessons)</li>
-                   <li>Choreograph a dance (6 lessons)</li>
-               </ul>
-           </ol>
+           <div class="center">
+               <h4><b>Junior Students</b></h4>
+               <p>Runs for around 4 months and 1 week in each class:</p>
+               <p>Learn how to count kathak beats (2 lessons) </p>
+               <p>Learn basic tatkaar (4 lessons) </p>
+               <p>Learn basic tukda (4 lessons) </p>
+               <p>Learn tihai (4 lessons) </p>
+               <p>Learn chakkar (3 lessons) </p>
+               <br>
+               <h4><b>Senior Students</b></h4>
+               <p>Runs for around 4 months and 1 week in each class:</p>
+               <p>Learn chakkardar tukdas (4 lessons)</p>
+               <p>Learn more complex tukdas (4 lessons)</p>
+               <p>Learn hastak (2 lessons)</p>
+               <p>Learn bhaav / emotions (1 lessons)</p>
+               <p>Choreograph a dance (6 lessons)</p>
+           </div>
        </div>
        <div class="col-lg-6">
             <!-- Carousel -->
@@ -245,23 +236,46 @@ INITIAL INFO
         </div>
    </div>
 </div>
-
+<br>
+<!-- CLASS TIMINGS -->
+<div class="container-lg">
+    <br>
+    <h3>Class Timings</h3>
+    <br>
+    <table>
+    <tr><td>Class</td> <td><b>Juniors</b></td> <td><b>Seniors</b></td></tr>
+    <tr><td>Jaipur Gharana</td> <td>Monday 3:30 to 4:30pm</td> <td>Monday 4:30 to 5:30pm</td></tr>
+    <tr><td>Lucknow Gharana</td> <td>Tuesday 3:30 to 4:30pm</td> <td>Tuesday 4:30 to 5:30pm</td></tr>
+    <tr><td>Banaras Gharana</td> <td>Wednesday 3:30 to 4:30pm</td> <td>Wednesday 4:30 to 5:30pm</td></tr>
+    </table>
+    <br>
+    <h3>Prices</h3>
+    <br>
+    <table>
+    <tr><td>Student</td> <td><b>Price</b></td></tr>
+    <tr><td>Senior</td> <td>$30</td></tr>
+    <tr><td>Junior</td> <td>$20</td></tr>
+    </table>
+<br>
+</div>
 <!-- EQUIPMENT -->
 <div class="container-lg">
    <div class="row align-items-center">
        <div class="col-lg-6">
-           <h3>Equipment:</h3>
-           <br>
-           <ul>
-               <li>Comfortable loose clothing</li>
-               <li>Ghungroo / bells that are tied to the feet</li>
-               <li>No footwear required while dancing</li>
-               <li>Notebook & pen</li>
-           </ul>
+           <img class="img-fluid part-img" src="static/images/ghungroo.jpg">
        </div>
-        <div class="col-lg-6">
-            <img class="img-fluid part-img" src="static/images/ghungroo.jpg">
-        </div>
+       <div class="col-lg-6">
+           <br>
+           <h3>Equipment</h3>
+           <br>
+           <div class="center">
+               <p>Comfortable loose clothing</p>
+               <p>Ghungroo / bells that are tied to the feet</p>
+               <p>No footwear required while dancing</p>
+               <p>Notebook & pen</p>
+           </div>
+       </div>
    </div>
 </div>
+
 {% endblock %}
