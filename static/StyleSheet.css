@@ -4,7 +4,7 @@
     --almond: rgb(255, 241, 225);
     --light-beige: rgb(245, 220, 197);
     --maroon: rgb(55, 17, 18);
-    --light-maroon: rgb(110, 14, 14);
+    --light-maroon: rgb(100, 6, 17);
 }
 
 /* IMPORTING FONT */
@@ -31,19 +31,15 @@ body{
 .nav-link{
     text-align: center;
     font-size: 1.5em;
-    color: var(--light-beige);
+    color: var(--beige);
     }
 
 .nav-link:hover{
-    color: var(--beige);
+    color: var(--light-beige);
     }
 
 nav .btn-outline{
     display: inline-block;
-}
-
-nav .btn-outline {
-  display: block;
 }
 
 .material-icons{
@@ -54,18 +50,18 @@ nav .btn-outline {
 /* BUTTONS */
 .btn{
     background-color: var(--maroon);
-    color: var(--light-beige);
+    color: var(--beige);
 }
 
 .btn-outline{
-    border: 1px solid var(--light-beige);
-    padding: 0em 1em;
+    border: 1px solid var(--beige);
+    padding: 0.2em 1em;
 }
 
 .btn-outline:hover{
     border: 1px solid var(--light-beige);
     background-color: var(--light-maroon);
-    color: var(--beige);
+    color: var(--light-beige);
 }
 
 .btn-round {
@@ -131,6 +127,14 @@ li{
     color: var(--beige) !important;
 }
 
+.welcome{
+        font-size: 20em;
+        position: absolute;
+        text-align: left;
+        margin-left: 30em;
+        color: var(--beige);
+    }
+
 .alert{
     color: red;
     font-size: 1.5em;
@@ -150,7 +154,7 @@ li{
     font-size: 1em;
     font-weight: 600;
     color: var(--maroon);
-    padding-right: 4em;
+    padding-right: 2em;
     padding-bottom: 1em;
 }
 
@@ -165,8 +169,6 @@ li{
     top:50%;
     width:100%;
     transform:translate(-50%,-50%);
-    border: 0px solid green;
-
     }
 
 .text-float .header{
@@ -259,6 +261,7 @@ li{
 
 /* IMAGES */
 .part-img{
+    align-items: center;
     max-width: 100%;
     display: block;
 }
@@ -272,15 +275,19 @@ li{
 
 /* -- circular images ---*/
     .rounded-circle:hover, .circular-overlay:hover ~.rounded-circle {
-    border:8px solid var(--light-maroon);
+    border:15px solid var(--almond);
     }
+
+    .rounded-circle{
+        border:15px solid var(--beige);
+    }
+
     .circular-overlay{
         position:absolute;
         left:50%;
         top:54%;
         width:100%;
         transform:translate(-50%,-50%);
-        border: 0px solid green;
 
     }
     .circular-overlay p{
@@ -385,6 +392,10 @@ td:first-child{
     text-align: right;
     }
 
+    .circular-overlay p{
+      padding: 0.2em 3em;
+    }
+
 }
 
 @media only screen and (max-width:1200px){
@@ -403,7 +414,7 @@ td:first-child{
 @media only screen and (max-width:992px){
 
    .text-float .header{
-     font-size:1.9em;
+     font-size:2.3em;
      }
 
     .text-float .small-header{
@@ -420,13 +431,25 @@ td:first-child{
     }
 
   .circular-overlay p{
-      padding: 0.2em 0.7em;
+      padding: 0.2em 2em;
     }
+
+  .quote{
+    font-size: 1.1em;
+  }
+
+    .quote-footer{
+    font-size: 0.8em;
+    }
+
+    .welcome{
+        position: absolute;
+        text-align: left;
+        margin-right: 50em;
+    }
+
 }
 
-.welcome{
-        background-color: green;
-    }
 @media only screen and (max-width:768px){
 
     .body-text{
@@ -446,7 +469,7 @@ td:first-child{
     }
 
     .text-float .header{
-     font-size:1.5em;
+     font-size:1.8em;
      }
 
    .text-float .header-quote{
@@ -473,10 +496,13 @@ td:first-child{
    .circular-overlay p{
       padding: 0.75em 0.5em;
     }
-
 }
 
 @media only screen and (max-width:576px){
+
+    .text-float .header{
+     font-size: 1.5em;
+     }
 
     .text-float .small-header{
      font-size:1em;

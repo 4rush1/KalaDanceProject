@@ -150,7 +150,7 @@ def login():
         f = request.form
         print(f)
         # SELECT QUERY TO CHECK IF EMAIL IN MEMBER TABLE and to select values for session
-        sql = """ select member_id, firstname, email, age_group, about_me, password, authorisation from member where email = ? """
+        sql = """ select member_id, firstname, surname, email, age_group, about_me, password, authorisation from member where email = ? """
         values_tuple = (f['email'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)
         # if the query delivers a result
@@ -161,6 +161,8 @@ def login():
             if result['password'] == f['password']:
                 # start a session --> give the session some values
                 session['firstname'] = result['firstname']
+                session['surname'] = result['surname']
+                session['age_group'] = result['age_group']
                 session['authorisation'] = result['authorisation']
                 session['member_id'] = result['member_id']
                 print(session)
