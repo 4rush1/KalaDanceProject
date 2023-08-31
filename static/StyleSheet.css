@@ -4,7 +4,7 @@
     --almond: rgb(255, 241, 225);
     --light-beige: rgb(245, 220, 197);
     --maroon: rgb(55, 17, 18);
-    --light-maroon: rgb(88, 23, 24);
+    --light-maroon: rgb(110, 14, 14);
 }
 
 /* IMPORTING FONT */
@@ -42,7 +42,12 @@ nav .btn-outline{
     display: inline-block;
 }
 
+nav .btn-outline {
+  display: block;
+}
+
 .material-icons{
+    color: var(--beige);
     padding: 0.25em 0.2em;
 }
 
@@ -54,24 +59,24 @@ nav .btn-outline{
 
 .btn-outline{
     border: 1px solid var(--light-beige);
-   padding: 0em 1em;
+    padding: 0em 1em;
 }
 
 .btn-outline:hover{
+    border: 1px solid var(--light-beige);
     background-color: var(--light-maroon);
     color: var(--beige);
-}
-
-.btn{
-    background-color: var(--maroon);
-    color: var(--light-beige);
 }
 
 .btn-round {
     border-radius: 70%;
 }
 
-/* TEXT */
+/* TEXT STYLES */
+.center{
+   text-align: center;
+}
+
 .body-text{
     font-size: 1em;
     text-align: center;
@@ -102,10 +107,6 @@ h3{
     color: var(--maroon);
 }
 
-.center{
-   text-align: center;
-}
-
 h4{
     font-size: 1.5em;
     font-weight: 600;
@@ -118,11 +119,14 @@ li{
 }
 
 /* special colours for text */
+
+/* Special colour and background */
 .special{
     color: var(--beige) !important;
     background-color: var(--maroon) !important;
 }
 
+/* Special text colour */
 .special_text{
     color: var(--beige) !important;
 }
@@ -164,6 +168,7 @@ li{
     border: 0px solid green;
 
     }
+
 .text-float .header{
     font-size: 3.1em;
     }
@@ -183,7 +188,7 @@ li{
 .text-float .small-header-quote{
     font-size: 0.6em;
     text-align: right;
-    padding: 0em 0.6em;
+    padding: 0em 2em;
     }
 
 /* CONTAINERS */
@@ -266,6 +271,9 @@ li{
 }
 
 /* -- circular images ---*/
+    .rounded-circle:hover, .circular-overlay:hover ~.rounded-circle {
+    border:8px solid var(--light-maroon);
+    }
     .circular-overlay{
         position:absolute;
         left:50%;
@@ -411,15 +419,14 @@ td:first-child{
     text-align: right;
     }
 
-  nav .btn-outline {
-      display: block;
-  }
-
   .circular-overlay p{
       padding: 0.2em 0.7em;
     }
 }
 
+.welcome{
+        background-color: green;
+    }
 @media only screen and (max-width:768px){
 
     .body-text{
