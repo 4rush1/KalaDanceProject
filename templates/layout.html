@@ -22,7 +22,7 @@
 
 <!-- NAVIGATION -->
 <div class="container-fluid fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark px-3 py-3.5 ">
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 py-3.5">
     <!-- Adding hamburger button -->
     <button class="navbar-toggler ms-auto btn-outline" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -33,10 +33,10 @@
                 <a class="nav-link" href="/"><i class="material-icons">home</i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/glossary">Glossary</a>
+                <a class="nav-link" href="/info">Information</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/info">Information</a>
+                <a class="nav-link" href="/glossary">Glossary</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/news">News</a>
@@ -57,14 +57,15 @@
         </div>
     </div>
     </nav>
-</div>
-{%  if session and session['member_id'] %}
-            <div class="welcome">
-                Welcome to Kala Dance {{ session['firstname'] }} {{ session['surname'] }}
-                <br>
-                Status: {{ session['age_group'] }}
+    {%  if session and session['member_id'] %}
+        <div class="welcome">
+            Welcome to Kala Dance {{ session['firstname'] }} {{ session['surname'] }}
+            <div class="float-end pe-3">
+            Status: {{ session['age_group'] }}
             </div>
-        {%  endif %}
+        </div>
+    {%  endif %}
+</div>
 
 <!-- MAIN BANNER -->
 <div class="container-fluid position-relative">

@@ -104,7 +104,16 @@ h3{
 }
 
 h4{
+    text-align: center;
     font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--maroon);
+}
+
+h5{
+    text-align: center;
+    font-size: 1.3em;
     font-weight: 600;
     margin: 0;
     color: var(--maroon);
@@ -128,11 +137,11 @@ li{
 }
 
 .welcome{
-        font-size: 20em;
-        position: absolute;
-        text-align: left;
-        margin-left: 30em;
+        text-align: center;
+        padding-left: 7.8em;
+        background-color: var(--maroon);
         color: var(--beige);
+        border-bottom: 1px solid black;
     }
 
 .alert{
@@ -172,11 +181,12 @@ li{
     }
 
 .text-float .header{
+    padding-top: 0.3em;
     font-size: 3.1em;
     }
 
 .text-float .header-quote{
-    font-size: 0.6em;
+    font-size: 0.55em;
     text-align: right;
     padding: 0em 1em;
     }
@@ -206,21 +216,8 @@ li{
     margin-bottom: 2em;
     margin-left: 3em;
     margin-right: 3em;
- }
-
-.container-collapse{
-    border: 0px solid blue;
-    margin-top: 1em;
- }
-
-.collapse-area{
-    border: 0px solid blue;
-    background-color: var(--almond);
-    margin-left: 2em;
-    margin-right: 2em;
-    padding: 2em 2em;
     border-radius: 40px;
-}
+ }
 
 .container-fluid{
     border: 0px;
@@ -229,33 +226,12 @@ li{
 
 .col-md-4{
     text-align: center;
-    margin-bottom: 2.5em;
-}
-
-.row{
-    border: 0px solid red;
-    padding: 1em 0 1em 0;
+    margin-bottom: 2em;
 }
 
 .container_round{
-    border: 0px solid blue;
     background-color: var(--almond);
-    padding: 2em 2em;
-    margin-bottom: 2em;
-    margin-top: 1em;
-    margin-left: 2em;
-    margin-right: 2em;
-    border-radius: 40px;
- }
-
-.small_container_round{
-    border: 0px solid blue;
-    background-color: var(--almond);
-    padding: 1em 1em;
-    margin-bottom: 1em;
-    margin-top: 1em;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 2em 2em;
     border-radius: 40px;
  }
 
@@ -364,6 +340,7 @@ td:first-child{
 
 .meta{
     font-size: 1em;
+    padding: 0.5em 0em;
     color: var(--maroon);
 }
 
@@ -442,12 +419,6 @@ td:first-child{
     font-size: 0.8em;
     }
 
-    .welcome{
-        position: absolute;
-        text-align: left;
-        margin-right: 50em;
-    }
-
 }
 
 @media only screen and (max-width:768px){
@@ -495,6 +466,10 @@ td:first-child{
 
    .circular-overlay p{
       padding: 0.75em 0.5em;
+    }
+
+   .welcome{
+       font-size: 0.8em;
     }
 }
 

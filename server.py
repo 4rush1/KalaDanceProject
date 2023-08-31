@@ -195,6 +195,7 @@ def classes():
 # REGISTRATION PAGE
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
+    error = "This person is already in the class"
     # QUERY TO DISPLAY STUDENTS IN EACH CLASS
     if request.method == "GET":
         data = request.args
@@ -235,6 +236,8 @@ def registration():
                         values(?,?)"""
         values_tuple = (f['name_list'], data['class_id'])
         result = run_commit_query(sql,values_tuple,db_path)
+        if result is False:
+            flash(error, category='error')
         return redirect(url_for('registration', class_id=data['class_id']))
 
 
