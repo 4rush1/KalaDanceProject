@@ -89,10 +89,10 @@ values( 'Aakriti', 'Mathur', 'aakriti.s@gmail.com', 'senior student', 'Have lear
 insert into news( title, subtitle, content, newsdate, member_id)
 values( 'Diwali Dance performance',
        'Learn dance routine before the performance!',
-       'Kala dance is performing for a Diwali festival in Welly, come along and watch us! ' || char(10) ||
+       'Kala dance is performing for a Diwali festival in Welly, come along and watch us! ' ||
        'For those in the group, please learn the dance routine before then!',
-       '2023-05-12 20:30:00', /* SQLite format */
-       (select member_id from member where firstname='Akshara')
+       '2023-05-12 20:30:00',
+       (select member_id from member where firstname='Usha')
        );
 insert into news( title, subtitle, content, newsdate, member_id)
 values( 'Class cancelled',
@@ -100,7 +100,7 @@ values( 'Class cancelled',
        'Unfortunately class has been cancelled on the 5th of June as it is King Charle''s Birthday. ' ||
        'Please learn Tatkaar moves before our next class',
        '2023-06-01 22:45:00',
-       (select member_id from member where firstname='Nandini')
+       (select member_id from member where firstname='Aditya')
        );
 
 /* CREATING CLASSES */

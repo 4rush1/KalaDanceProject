@@ -16,11 +16,11 @@ REGISTRATIONS
 {% endblock %}
 
 {% block content %}
-    <div class="small_container_round">
+    <div class="container_round">
         <form action="{{url_for('registration', class_id=class_id) }}" method="POST">
             <label for="name_list" class="form-label"><h4>Which Student/Teacher do you want to add</h4></label>
                 <select class="form-select" name="name_list" id="name_list"  required>
-                  <option value="">Open this select menu</option>
+                  <option value="">--Select--</option>
                     {% for row in members %}
                   <option value="{{ row['member_id'] }}">{{ row['firstname'] }} {{ row['surname'] }}</option>
                     {% endfor %}
@@ -32,7 +32,7 @@ REGISTRATIONS
         </form>
     </div>
     {%  for row in register %}
-        <div class="small_container_round">
+        <div class="container_round py-3">
             <table>
             <tr> <td>{{ row['age_group'] }}:</td> <td>{{ row['firstname'] }} {{ row['surname'] }}</td> </tr>
             </table>

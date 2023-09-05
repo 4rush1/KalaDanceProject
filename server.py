@@ -20,13 +20,15 @@ def news_date(sqlite_dt):
 def index():
     return render_template("index.html")
 
-# INITIAL INFO PAGE
+# INFO PAGE
 @app.route('/info')
 def info():
     return render_template("info.html")
 
+# GLOSSARY PAGE
 @app.route('/glossary')
 def glossary():
+    # QUERY TO SELECT WORDS, PRONUNCIATION AND MEANING FROM GLOSSARY
     sql = "select word_id, word, pronunciation, meaning from glossary"
     values_tuple=()
     result = run_search_query_tuples(sql, values_tuple, db_path, True)
@@ -50,6 +52,8 @@ def news():
 # NEWS CREATE, UPDATE READ PAGE
 @app.route('/news_cud', methods=["GET", "POST"])
 def news_cud():
+    # error message
+    error= "News with this title, subtitle or content already exists"
     # Arrive at page from get or post method and collect data from web address
     data = request.args
     required_keys = ['id', 'task']
@@ -57,10 +61,11 @@ def news_cud():
         if k not in data.keys():
             message = "do not know what to do with create, read, update on news (key not present)"
             return render_template("error.html", message=message)
-# GET : TO GET INFO FROM FORM
+# GET : arrive at form
     if request.method == "GET":
         if data['task'] == 'delete':
             # first query, the ? could be any number, it's an unknown variable
+            # QUERY TO DELETE NEWS FROM NEWS TABLE
             sql = "delete from news where news_id = ?"
             # unknown variable declared in tuple
             values_tuple = (data['id'],)
@@ -70,6 +75,7 @@ def news_cud():
             # redirects us back to the news page after deleting
             return redirect(url_for('news'))
         elif data['task'] == 'update':
+            # QUERY that selects the news which is being updated from the news table
             sql = """ select title, subtitle, content from news where news_id=? """
             values_tuple = (data['id'],)
             result = run_search_query_tuples(sql, values_tuple, db_path, True)
@@ -92,7 +98,7 @@ def news_cud():
         f = request.form
         print(f)
         if data['task'] == 'add':
-            # add the new news entry to the database
+            # QUERY TO add the new news entry to the database
             # could be different title, subtitle and content each time --> ???
             # the datetime now is a sqlite command --> gets time off server and add it in SQLite format
             # member is fixed at 2 for now, but will change later depending on who is logged in
@@ -102,8 +108,13 @@ def news_cud():
             values_tuple = (f['title'], f['subtitle'], f['content'], session['member_id'])
             result = run_commit_query(sql, values_tuple, db_path)
             print(result)
+            # if the news title, subtitle or content already exists,
+            # the news will not enter and the user gets a flash error message
+            if result is False:
+                flash(error, category='error')
             return redirect(url_for('news'))
         elif data['task'] == 'update':
+            # QUERY TO UPDATE THE SELECTED NEWS FROM THE NEWS TABLE
             sql = """update news set title=?, subtitle=?, content=?, newsdate=datetime('now', 'localtime') where news_id=?"""
             # tuple values
             values_tuple = (f['title'], f['subtitle'], f['content'], data['id'])
@@ -117,7 +128,7 @@ def news_cud():
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
     error = "Looks like you already have an account!"
-    # GET: TO GET INFO FROM FORM
+    # GET: arrive at form
     if request.method == "GET":
         return render_template('signup.html')
     # POST : TO POST INFO FROM FORM
@@ -142,7 +153,7 @@ def signup():
 @app.route('/login', methods=["GET", "POST"])
 def login():
     error = "Credentials not recognised"
-    # GET: TO GET INFO FROM FORM
+    # GET: arrive at form
     if request.method == "GET":
         return render_template('login.html')
     # POST : TO POST INFO FROM FORM
@@ -159,7 +170,7 @@ def login():
             result = result[0]
             # checking if the password matches
             if result['password'] == f['password']:
-                # start a session --> give the session some values
+                # if password matches we start a session --> give the session some values
                 session['firstname'] = result['firstname']
                 session['surname'] = result['surname']
                 session['age_group'] = result['age_group']
@@ -196,9 +207,9 @@ def classes():
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
     error = "This person is already in the class"
-    # QUERY TO DISPLAY STUDENTS IN EACH CLASS
     if request.method == "GET":
         data = request.args
+        # QUERY TO DISPLAY STUDENTS IN EACH CLASS
         sql = """ select m.member_id, m.firstname, m.surname, m.age_group, c.class_title
                 from member m
                 join registration r on m.member_id = r.member_id

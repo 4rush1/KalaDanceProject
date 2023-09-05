@@ -194,11 +194,12 @@ li{
 .text-float .small-header{
     font-size: 2.6em;
     text-align: right;
-    padding: 0em 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.8em;
     }
 
 .text-float .small-header-quote{
-    font-size: 0.6em;
+    font-size: 0.7em;
     text-align: right;
     padding: 0em 2em;
     }
@@ -208,6 +209,7 @@ li{
     border: 0px solid blue;
     background-color: var(--almond);
     margin-bottom: 2em;
+    margin-top: 2em;
  }
 
 .container-maroon{
@@ -216,11 +218,9 @@ li{
     margin-bottom: 2em;
     margin-left: 3em;
     margin-right: 3em;
-    border-radius: 40px;
  }
 
 .container-fluid{
-    border: 0px;
     padding:0;
 }
 
@@ -232,14 +232,15 @@ li{
 .container_round{
     background-color: var(--almond);
     margin: 2em 2em;
+    padding: 2em 2em;
     border-radius: 40px;
  }
 
 /* IMAGES */
 .part-img{
-    align-items: center;
     max-width: 100%;
     display: block;
+    margin:auto;
 }
 
 .img-size{
@@ -361,12 +362,11 @@ td:first-child{
 @media only screen and (max-width:1400px){
 
     .text-float .small-header{
-     font-size:2.2em;
+     font-size:2em;
      }
 
     .text-float .small-header-quote{
     font-size: 0.5em;
-    text-align: right;
     }
 
     .circular-overlay p{
@@ -378,33 +378,35 @@ td:first-child{
 @media only screen and (max-width:1200px){
 
     .text-float .small-header{
-     font-size:1.9em;
+     font-size:1.8em;
      }
 
     .text-float .small-header-quote{
     font-size: 0.45em;
-    text-align: right;
     }
 
 }
 
 @media only screen and (max-width:992px){
 
-   .text-float .header{
-     font-size:2.3em;
-     }
-
-    .text-float .small-header{
-     font-size:1.5em;
-     }
-
-    .text-float .header-quote{
-        display:none;
+    .nav-button{
+        text-align: center;
     }
 
-    .text-float .small-header-quote{
-    font-size: 0.4em;
-    text-align: right;
+    .text-float .small-header{
+     font-size:1.4em;
+     }
+
+   .text-float .small-header-quote{
+    display:none;
+    }
+
+    .text-float .header{
+        font-size: 2.4em;
+    }
+
+    .text-float .header-quote{
+    display:none;
     }
 
   .circular-overlay p{
@@ -423,6 +425,15 @@ td:first-child{
 
 @media only screen and (max-width:768px){
 
+    .text-float .small-header{
+     font-size:1.1em;
+     }
+
+   .text-float .header{
+     font-size:1.8em;
+   padding-top: 0.5em;
+     }
+
     .body-text{
         font-size: 1.2em;
     }
@@ -437,22 +448,6 @@ td:first-child{
 
     .h3{
         font-size:3em;
-    }
-
-    .text-float .header{
-     font-size:1.8em;
-     }
-
-   .text-float .header-quote{
-        display:none;
-    }
-
-   .text-float .small-header{
-     font-size:1.1em;
-     }
-
-   .text-float .small-header-quote{
-        display:none;
     }
 
    .subtitle{
@@ -475,17 +470,18 @@ td:first-child{
 
 @media only screen and (max-width:576px){
 
-    .text-float .header{
-     font-size: 1.5em;
-     }
-
     .text-float .small-header{
      font-size:1em;
+    padding-right: 0.4em;
      }
 
     .text-float .small-header-quote{
         display:none;
     }
+
+    .text-float .header{
+     font-size: 1.5em;
+     }
 
     td{
        font-size: 1em;
