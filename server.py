@@ -236,7 +236,7 @@ def registration():
                 return redirect(url_for('registration', class_id=data['class_id']))
         else:
             return render_template("registration.html", register=result, class_id=data['class_id'], members=member_list)
-# POST: POST INFO FROM THE SELECT MEMBERS FORM
+# POST: POST INFO FROM THE SELECT MEMBERs FORM
     elif request.method == "POST":
         f = request.form
         print(f)
