@@ -155,7 +155,7 @@ li{
     font-size: 1.5em;
     font-weight: 600;
     color: var(--maroon);
-    padding: 0em 1.3em;
+    padding: 0 1.3em;
     padding-top: 1em;
 }
 
@@ -188,7 +188,7 @@ li{
 .text-float .header-quote{
     font-size: 0.55em;
     text-align: right;
-    padding: 0em 1em;
+    padding: 0 1em;
     }
 
 .text-float .small-header{
@@ -201,19 +201,17 @@ li{
 .text-float .small-header-quote{
     font-size: 0.7em;
     text-align: right;
-    padding: 0em 2em;
+    padding: 0 2em;
     }
 
 /* CONTAINERS */
 .container-lg{
-    border: 0px solid blue;
     background-color: var(--almond);
     margin-bottom: 2em;
     margin-top: 2em;
  }
 
 .container-maroon{
-    border: 0px solid blue;
     background-color: var(--maroon);
     margin-bottom: 2em;
     margin-left: 3em;
@@ -341,7 +339,7 @@ td:first-child{
 
 .meta{
     font-size: 1em;
-    padding: 0.5em 0em;
+    padding: 0.5em 0;
     color: var(--maroon);
 }
 

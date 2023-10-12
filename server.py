@@ -7,34 +7,39 @@ app = Flask(__name__)
 app.secret_key = "awedrtgyhjukngfg"
 db_path = 'data/dance_db.sqlite'
 
+
 # FILTER TEMPLATE
-#format of date, year, month, day, hour, minute, second
-#string format time
+# format of date, year, month, day, hour, minute, second
+# string format time
 @app.template_filter()
 def news_date(sqlite_dt):
     x = datetime.strptime(sqlite_dt, '%Y-%m-%d %H:%M:%S')
     return x.strftime('%a-%d-%b %y %I:%M %p')
+
 
 # HOMEPAGE
 @app.route('/',  methods=["GET", "POST"])
 def index():
     return render_template("index.html")
 
+
 # INFO PAGE
 @app.route('/info')
 def info():
     return render_template("info.html")
+
 
 # GLOSSARY PAGE
 @app.route('/glossary')
 def glossary():
     # QUERY TO SELECT WORDS, PRONUNCIATION AND MEANING FROM GLOSSARY
     sql = "select word_id, word, pronunciation, meaning from glossary"
-    values_tuple=()
+    values_tuple = ()
     result = run_search_query_tuples(sql, values_tuple, db_path, True)
     for k in result:
         print(k['word'])
     return render_template("glossary.html", glossary=result)
+
 
 # NEWS PAGE
 @app.route('/news')
@@ -49,11 +54,12 @@ def news():
     print(result)
     return render_template("news.html", news=result)
 
+
 # NEWS CREATE, UPDATE READ PAGE
 @app.route('/news_cud', methods=["GET", "POST"])
 def news_cud():
     # error message
-    error= "News with this title, subtitle or content already exists"
+    error = "News with this title, subtitle or content already exists"
     # Arrive at page from get or post method and collect data from web address
     data = request.args
     required_keys = ['id', 'task']
@@ -124,6 +130,7 @@ def news_cud():
             return redirect(url_for('news'))
     return render_template("news_cud.html")
 
+
 # SIGNUP PAGE
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
@@ -148,6 +155,7 @@ def signup():
         if result is False:
             flash(error, category='error')
         return redirect(url_for('login'))
+
 
 # LOGIN PAGE
 @app.route('/login', methods=["GET", "POST"])
@@ -183,11 +191,13 @@ def login():
         else:
             return render_template('login.html', error=error)
 
+
 @app.route('/logout')
 def logout():
     # resets all the keys in the session
     session.clear()
     return redirect(url_for('index'))
+
 
 # CLASSES PAGE
 @app.route('/classes')
@@ -203,6 +213,7 @@ def classes():
 
     return render_template("classes.html", classes=result)
 
+
 # REGISTRATION PAGE
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
@@ -217,7 +228,7 @@ def registration():
                 where c.class_id = ?
                 order by m.age_group desc;
                 """
-        values_tuple=(data['class_id'],)
+        values_tuple = (data['class_id'],)
         result = run_search_query_tuples(sql, values_tuple, db_path, True)
         # QUERY TO SELECT / ESTABLISH ITEMS FROM THE MEMBERS TABLE IN THE SELECT BUTTON
         sql = """select m.member_id, m.firstname, m.surname
@@ -246,11 +257,12 @@ def registration():
         sql = """insert into registration(member_id, class_id)
                         values(?,?)"""
         values_tuple = (f['name_list'], data['class_id'])
-        result = run_commit_query(sql,values_tuple,db_path)
+        result = run_commit_query(sql, values_tuple, db_path)
         if result is False:
             flash(error, category='error')
         return redirect(url_for('registration', class_id=data['class_id']))
 
 
 if __name__ == "__main__":
-    app.run(port=8000,debug=True)
+    app.run(port=8000, debug=True)
+
