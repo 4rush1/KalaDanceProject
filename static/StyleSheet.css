@@ -273,13 +273,6 @@ li{
         text-align: center;
     }
 
-    .circular-overlay h4{
-        color: var(--beige) !important;
-        font-size: 2em !important;
-        font-weight: 600 !important;
-        text-align: center;
-    }
-
     .btntext{
         text-align: center;
         font-size: 2em;
